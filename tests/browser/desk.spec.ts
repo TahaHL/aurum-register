@@ -7,7 +7,7 @@ for (const width of [390, 768, 1440])
     await page.setViewportSize({ width, height: 1000 });
     await page.goto("/");
     await expect(
-      page.getByRole("heading", { name: "Welcome to the desk." }),
+      page.getByRole("heading", { name: "Sign in to Aurum Register" }),
     ).toBeVisible();
     const loginScan = await new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
@@ -19,10 +19,10 @@ for (const width of [390, 768, 1440])
     });
     await page.getByRole("button", { name: /Enter as owner/ }).click();
     await expect(
-      page.getByRole("heading", { name: "Gold price & dealing desk" }),
+      page.getByRole("heading", { name: "Market overview" }),
     ).toBeVisible();
     await expect(
-      page.getByRole("button", { name: "Issue quote", exact: true }),
+      page.getByRole("button", { name: "New quote", exact: true }),
     ).toBeVisible();
     expect(
       await page.evaluate(
@@ -51,6 +51,7 @@ test("issue a quote, accept the customer link and observe reserved stock", async
 }, info) => {
   await page.goto("/");
   await page.getByRole("button", { name: /Enter as owner/ }).click();
+  await page.getByRole("button", { name: "New quote", exact: true }).click();
   await page.getByLabel("Customer reference").fill("BROWSER-" + Date.now());
   await page.getByLabel("Quantity", { exact: true }).fill("2");
   await page.getByRole("button", { name: "Issue quote", exact: true }).click();
@@ -75,6 +76,7 @@ test("issue a quote, accept the customer link and observe reserved stock", async
     .analyze();
   expect(scan.violations).toEqual([]);
   await page.reload();
+  await page.getByRole("button", { name: "Quotes", exact: true }).click();
   await expect(
     page.getByText("Reserved", { exact: true }).first(),
   ).toBeVisible();
@@ -159,6 +161,6 @@ test("receive a lot, correct its quantity and verify staff permissions", async (
   ).toBeVisible();
   await page.reload();
   await expect(
-    page.getByRole("heading", { name: "Gold price & dealing desk" }),
+    page.getByRole("heading", { name: "Market overview" }),
   ).toBeVisible();
 });

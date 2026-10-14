@@ -13,6 +13,7 @@ for (const action of ["sold", "released"] as const) {
     await page.goto("/");
     await page.getByRole("button", { name: /Enter as owner/ }).click();
     const reference = `Outcome ${action} ${Date.now()}`;
+    await page.getByRole("button", { name: "New quote", exact: true }).click();
     await page.getByLabel("Customer reference").fill(reference);
     await page
       .getByRole("button", { name: "Issue quote", exact: true })

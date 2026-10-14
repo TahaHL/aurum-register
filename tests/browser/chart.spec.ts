@@ -50,6 +50,7 @@ test("retains recorded history on provider failure and does not connect across a
   for (const segment of await segments.all())
     expect(await segment.getAttribute("d")).not.toContain("L");
   await expect(page.getByText("Price delayed", { exact: true })).toBeVisible();
+  await page.getByRole("button", { name: "New quote", exact: true }).click();
   await expect(
     page.getByRole("button", { name: "Fresh price required", exact: true }),
   ).toBeDisabled();

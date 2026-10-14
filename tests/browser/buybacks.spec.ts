@@ -50,10 +50,7 @@ test("buy-back acceptance, inspected receipt and default premium complete the in
   });
   await page.getByRole("button", { name: "Inventory", exact: true }).click();
   await page.getByLabel("Search inventory").fill(itemName);
-  const row = page
-    .getByRole("row")
-    .filter({ hasText: itemName })
-    .last();
+  const row = page.getByRole("row").filter({ hasText: itemName }).last();
   await expect(row).toContainText("Default premium: 5.5%");
   await row.getByRole("button", { name: /Set premium for/ }).click();
   await dialog.getByLabel("Default premium (%)").fill("4.25");
@@ -65,15 +62,30 @@ test("buy-back acceptance, inspected receipt and default premium complete the in
   await row.getByRole("button", { name: "Quote lot" }).click();
   await expect(page.getByLabel("Dealer premium (%)")).toHaveValue("4.25");
 });
-test("mobile buy-back form stays usable and the dealing ticket precedes the chart", async ({
+test("mobile dealing ticket opens separately, retains drafts and restores keyboard focus", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 390, height: 900 });
   await page.goto("/");
   await page.getByRole("button", { name: /Enter as owner/ }).click();
-  const ticket = await page.locator(".composer").boundingBox(),
-    chart = await page.locator(".market-card").boundingBox();
-  expect(ticket!.y).toBeLessThan(chart!.y);
+  const newQuote = page.getByRole("button", { name: "New quote", exact: true });
+  await expect(page.getByRole("dialog")).not.toBeVisible();
+  await newQuote.click();
+  const ticket = page.getByRole("dialog", { name: "Create a quotation" });
+  await expect(ticket).toBeVisible();
+  await ticket.getByLabel("Customer reference").fill("Draft retained");
+  expect(
+    (await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa"]).analyze())
+      .violations,
+  ).toEqual([]);
+  await page.keyboard.press("Escape");
+  await expect(ticket).not.toBeVisible();
+  await expect(newQuote).toBeFocused();
+  await newQuote.click();
+  await expect(ticket.getByLabel("Customer reference")).toHaveValue(
+    "Draft retained",
+  );
+  await ticket.getByRole("button", { name: "Close quotation ticket" }).click();
   await page.getByRole("button", { name: "Buy-backs", exact: true }).click();
   expect(
     await page.evaluate(
