@@ -1,0 +1,28 @@
+services:
+  database:
+    image: postgres:18
+    environment:
+      POSTGRES_USER: quoteledger
+      POSTGRES_PASSWORD: local-demo-only
+      POSTGRES_DB: quoteledger
+    ports: ['127.0.0.1:5437:5432']
+    volumes: ['quoteledger-data:/var/lib/postgresql']
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U quoteledger']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  app:
+    build: .
+    ports: ['127.0.0.1:3107:3107']
+    environment:
+      DATABASE_URL: postgresql://quoteledger:local-demo-only@database:5432/quoteledger
+      APP_ORIGIN: http://127.0.0.1:3107
+      PRICE_PROVIDER: fixture
+      SESSION_SECRET: ${SESSION_SECRET:?Set SESSION_SECRET in .env to a random value of at least 32 characters}
+      DEMO_ACCOUNTS: 'true'
+    depends_on:
+      database:
+        condition: service_healthy
+volumes:
+  quoteledger-data:
