@@ -70,7 +70,7 @@ Set TEST_DATABASE_URL to a disposable native PostgreSQL database for all five ra
 
 ## Deployment
 
-[Render configuration and limitations](docs/DEPLOYMENT.md). `render.yaml` requests only a free web service and free PostgreSQL database, with generated session secret, internal database access and deployment after passing CI. The database expires after 30 days; free services sleep when idle. Hosted publication is verified separately from local checks. Docker configuration is supplied but has not been run locally because Docker is unavailable.
+[Render configuration and limitations](docs/DEPLOYMENT.md). `render.yaml` requests only a free web service, with a generated session secret and an externally supplied Neon Free PostgreSQL connection. Automatic deployment is disabled; check CI before manually deploying. Render was verified with no payment card and $0 projected charges; Neon is on Free ($0/month). Free-tier limits can suspend service, and free web services sleep when idle. No paid upgrades are authorised. Hosted publication is verified separately from local checks. Docker configuration is supplied but has not been run locally because Docker is unavailable.
 
 ## Code map and limitations
 
