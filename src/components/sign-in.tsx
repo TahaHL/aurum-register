@@ -59,69 +59,38 @@ export default function SignIn({
           </span>
         </a>
         <div className="sign-in-intro">
-          <p className="eyebrow">A CLEAR RECORD. AT EVERY STEP.</p>
+          <div className="assay-mark" aria-hidden="true">
+            <span>79</span>Au<small>196.96657</small>
+          </div>
           <h1>
-            Know your stock.
+            A desk for
             <br />
-            Stand by your quote.
+            the gold trade.
           </h1>
-          <p>
-            A considered workspace for the precious metals trade. From the first
-            gram to the completed sale.
-          </p>
-          <div className="ledger-preview" aria-hidden="true">
-            <div className="ledger-preview-heading">
-              <span>
-                <GoldMark /> GOLD INVENTORY
-              </span>
-              <span>AU · GBP</span>
+          <p>Price a lot. Hold the stock. Record the sale.</p>
+          <dl className="entry-register">
+            <div>
+              <dt>01 / Sell</dt>
+              <dd>Fixed-price quotations</dd>
             </div>
-            <div className="ledger-preview-lot">
-              <span className="preview-bar">
-                <GoldMark />
-              </span>
-              <div>
-                <strong>10g gold bar</strong>
-                <small>999.9 fine · one recorded lot</small>
-              </div>
-              <Check size={20} />
+            <div>
+              <dt>02 / Buy</dt>
+              <dd>Assessed customer gold</dd>
             </div>
-            <div className="preview-flow">
-              <span>
-                <i />
-                Stock received
-              </span>
-              <span>
-                <i />
-                Price captured
-              </span>
-              <span>
-                <i />
-                Stock reserved
-              </span>
+            <div>
+              <dt>03 / Record</dt>
+              <dd>Every stock movement</dd>
             </div>
-          </div>
-          <div className="sign-in-proof">
-            <ShieldCheck size={18} />
-            <span>
-              Fixed quote prices. Timed stock holds. A history you can follow.
-            </span>
-          </div>
+          </dl>
         </div>
-        <p className="sign-in-story-footer">
-          Built around the details that matter.
-        </p>
+        <p className="sign-in-story-footer">Gold / GBP / Physical inventory</p>
       </section>
       <section className="sign-in-form-side" aria-labelledby="sign-in-heading">
         <div className="sign-in-card">
-          <span className="sign-in-icon">
-            <Fingerprint size={27} />
-          </span>
-          <p className="eyebrow">YOUR DEALER WORKSPACE</p>
-          <h2 id="sign-in-heading">Welcome to the desk.</h2>
+          <h2 id="sign-in-heading">Open your desk.</h2>
           <p className="sign-in-description">
-            Sign in to manage inventory, issue quotes and keep every movement on
-            record.
+            Sign in with your dealer account, or explore the fictional demo
+            below.
           </p>
           {notice && (
             <p className="session-notice" role="status">
