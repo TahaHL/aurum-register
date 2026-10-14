@@ -49,13 +49,13 @@ export default function SignIn({
   }
   return (
     <main className="sign-in-shell">
-      <section className="sign-in-story" aria-label="About QuoteLedger">
+      <section className="sign-in-story" aria-label="About Aurum Register">
         <a className="brand" href="/">
           <span className="brand-mark">
             <GoldMark />
           </span>
           <span>
-            QuoteLedger<small>PRECIOUS METALS DESK</small>
+            Aurum Register<small>PRECIOUS METALS DESK</small>
           </span>
         </a>
         <div className="sign-in-intro">
@@ -63,7 +63,7 @@ export default function SignIn({
             <span>79</span>Au<small>196.96657</small>
           </div>
           <h1>
-            A desk for
+            A register for
             <br />
             the gold trade.
           </h1>
@@ -87,7 +87,7 @@ export default function SignIn({
       </section>
       <section className="sign-in-form-side" aria-labelledby="sign-in-heading">
         <div className="sign-in-card">
-          <h2 id="sign-in-heading">Open your desk.</h2>
+          <h2 id="sign-in-heading">Sign in to Aurum Register</h2>
           <p className="sign-in-description">
             Sign in with your dealer account, or explore the fictional demo
             below.

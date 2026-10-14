@@ -79,7 +79,7 @@ export default function CustomerView({
     <div className="customer-shell">
       <a href="/" className="customer-brand">
         <GoldMark />
-        QuoteLedger
+        Aurum Register
       </a>
       <p className="demo-line">
         Fictional customer quote · no payment is taken
@@ -115,7 +115,7 @@ export default function CustomerView({
                   </strong>
                   <p>
                     {quote.reservation.status === "sold"
-                      ? "The dealer recorded this sale and removed the units from inventory. No payment was processed by QuoteLedger."
+                      ? "The dealer recorded this sale and removed the units from inventory. No payment was processed by Aurum Register."
                       : quote.reservation.status === "held"
                         ? `Hold ends at ${stamp(quote.reservation.expiresAt)}.`
                         : "Contact the dealer for a new quote."}

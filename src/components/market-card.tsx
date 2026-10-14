@@ -206,7 +206,7 @@ export default function MarketCard({
     );
     const link = document.createElement("a");
     link.href = url;
-    link.download = "quoteledger-gold-" + range + "-" + unit + ".csv";
+    link.download = "aurum-register-gold-" + range + "-" + unit + ".csv";
     link.click();
     URL.revokeObjectURL(url);
   }
