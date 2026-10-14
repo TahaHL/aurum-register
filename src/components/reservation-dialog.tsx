@@ -3,7 +3,6 @@ import { X } from "lucide-react";
 import type { Quote } from "../../shared/types";
 import { formatGBP } from "../../shared/pricing";
 import { api } from "../api";
-
 export default function ReservationDialog({
   quote,
   action,

@@ -10,7 +10,6 @@ import {
 import type { DealerUser } from "../../shared/types";
 import { api } from "../api";
 import { GoldMark } from "./quote-ui";
-
 export default function SignIn({
   demoAccounts,
   notice,
@@ -24,7 +23,6 @@ export default function SignIn({
   const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
-
   async function signIn(credentials: { email: string; password: string }) {
     setBusy(true);
     setError("");

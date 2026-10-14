@@ -239,7 +239,11 @@ export default function MarketCard({
       </div>
       <div className="market-main">
         <div>
-          {history?.source === "frankfurter" && <p className="reference-price-label">Daily reference price · not the live quote price</p>}
+          {history?.source === "frankfurter" && (
+            <p className="reference-price-label">
+              Daily reference price · not the live quote price
+            </p>
+          )}
           <p className="market-price">
             {current === null ? "–" : money(current)}
             <small>
@@ -668,11 +672,17 @@ export default function MarketCard({
           <>
             Live source:{" "}
             <a
-              href={(snapshot?.source || history?.source) === "goldapi" ? "https://www.goldapi.io/" : "https://gold-api.com/docs"}
+              href={
+                (snapshot?.source || history?.source) === "goldapi"
+                  ? "https://www.goldapi.io/"
+                  : "https://gold-api.com/docs"
+              }
               target="_blank"
               rel="noreferrer"
             >
-              {(snapshot?.source || history?.source) === "goldapi" ? "GoldAPI.io" : "Gold-API.com"}
+              {(snapshot?.source || history?.source) === "goldapi"
+                ? "GoldAPI.io"
+                : "Gold-API.com"}
             </a>
             . Updates every 30 seconds. Only collected observations are shown;
             earlier history is not available for the live feed. Gaps represent
