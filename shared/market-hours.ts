@@ -1,4 +1,4 @@
-// QuoteLedger's published demo dealing hours, not a provider market-status claim.
+// Aurum Register's published demo dealing hours, not a provider market-status claim.
 // Conservative fixed UTC closure: Friday 21:00 through Sunday 22:00.
 export function weekendDeskClosed(now: number): boolean {
   const date = new Date(now),
