@@ -127,7 +127,7 @@ function DealerAccess() {
       <main className="access-loading">
         <a className="customer-brand" href="/">
           <GoldMark />
-          QuoteLedger
+          Aurum Register
         </a>
 
         <p role="status">
@@ -415,14 +415,8 @@ function Desk({
       <header className="ledger-nav">
         <div className="ledger-nav-inner">
           <a className="ledger-wordmark" href="/">
-            <span className="brand-bars" aria-hidden="true">
-              <i />
-
-              <i />
-
-              <i />
-            </span>
-            QuoteLedger<span className="brand-edition">DESK</span>
+            <span className="register-mark" aria-hidden="true">AR</span>
+            Aurum Register<span className="brand-edition">DESK</span>
           </a>
 
           <nav className="ledger-links" aria-label="Main navigation">
@@ -572,14 +566,14 @@ function Desk({
 
               <h1>
                 {tab === "overview"
-                  ? "Gold desk."
+                  ? "Market overview"
                   : tab === "inventory"
-                    ? "Stock book."
+                    ? "Inventory"
                     : tab === "quotes"
-                      ? "Quotations."
+                      ? "Quotations"
                       : tab === "buybacks"
-                        ? "Buy-back desk."
-                        : "The ledger."}
+                        ? "Buy-backs"
+                        : "Activity"}
               </h1>
             </div>
 
@@ -727,7 +721,7 @@ function Desk({
 
           <footer className="desk-footer">
             <span>
-              QuoteLedger <b>·</b> Gold. GBP. A clear record.
+              Aurum Register <b>·</b> Precious-metals inventory & quotations
             </span>
 
             <span>Fictional stock · No payments</span>
@@ -741,7 +735,7 @@ function Desk({
         aria-label="Create a quotation" onClose={() => setTicketOpen(false)}
       >
         <div className="ticket-drawer-top">
-          <span>QuoteLedger / Sales</span>
+          <span>Aurum Register / Sales</span>
           <button
             className="icon-button"
             aria-label="Close quotation ticket"
