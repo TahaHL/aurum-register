@@ -53,7 +53,7 @@ const server = app.listen(
   process.env.HOST || "127.0.0.1",
   () =>
     console.log(
-      `QuoteLedger API ready: http://127.0.0.1:${process.env.PORT || 3107} · ${database.kind} · fictional demo`,
+      `Aurum Register API ready: http://127.0.0.1:${process.env.PORT || 3107} · ${database.kind} · fictional demo`,
     ),
 );
 let sweeping = false;
