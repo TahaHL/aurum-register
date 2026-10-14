@@ -4,7 +4,7 @@
 
 `render.yaml` requests only a free Node web service in Frankfurt. Supply a separate Neon Free PostgreSQL connection string as the secret `DATABASE_URL`, with TLS enabled. A generated session secret stays in Render. The app derives its HTTPS origin from `RENDER_EXTERNAL_URL`; explicit `APP_ORIGIN` takes precedence for custom domains. Public demo accounts contain fictional data only.
 
-Connect `TahaHL/quoteledger` as a Render Blueprint and verify the web instance is Free before deployment. Automatic deployments are disabled; verify GitHub checks before manually deploying a new revision. Health: `/api/health`. Startup runs migrations, seeds missing sample lots and releases expired holds, including after free-service sleep.
+Connect `TahaHL/aurum-register` as a Render Blueprint and verify the web instance is Free before deployment. Automatic deployments are disabled; verify GitHub checks before manually deploying a new revision. Health: `/api/health`. Startup runs migrations, seeds missing sample lots and releases expired holds, including after free-service sleep.
 
 Do not add a card, select a paid plan, enable paid extras, or use trial-to-paid services. The Render workspace was verified on Hobby with no card and $0 current/projected charges on 14 October 2026. Render documents suspension rather than overage billing when no payment method is attached. Free web services sleep after 15 minutes idle and share 750 hours per workspace per month. Build and bandwidth limits also apply. Keep the billing configuration unchanged.
 
