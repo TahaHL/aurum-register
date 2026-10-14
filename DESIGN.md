@@ -1,10 +1,10 @@
-# QuoteLedger Design Spec
+# Aurum Register Design Spec
 
 Hand this file to Codex. Put it in the repo root as `DESIGN.md` and start the session with the prompt below.
 
 ## Prompt for Codex
 
-> Restyle QuoteLedger to follow `DESIGN.md` exactly. Do not change business logic, API routes or tests. Replace the current fonts, colours and layout with the tokens and layouts in this file. Remove anything listed under "Banned patterns". Work page by page in this order: app shell, price header and chart, inventory, quote builder, customer quote page, activity log. After each page, run the existing tests and take a screenshot at 1440px and 390px wide. Use only the fonts, colours, radii and spacing defined here. If something is not covered, pick the closest existing token rather than inventing a new one.
+> Restyle Aurum Register to follow `DESIGN.md` exactly. Do not change business logic, API routes or tests. Replace the current fonts, colours and layout with the tokens and layouts in this file. Remove anything listed under "Banned patterns". Work page by page in this order: app shell, price header and chart, inventory, quote builder, customer quote page, activity log. After each page, run the existing tests and take a screenshot at 1440px and 390px wide. Use only the fonts, colours, radii and spacing defined here. If something is not covered, pick the closest existing token rather than inventing a new one.
 
 ---
 
@@ -14,23 +14,23 @@ Hand this file to Codex. Put it in the repo root as `DESIGN.md` and start the se
 
 What we are borrowing, and from where:
 
-| Reference | What we take | What we leave |
-|---|---|---|
-| BullionByPost | Price-first page: metal symbol, big price, change, week high and low, then a row of period chips (Live, Today, Week, Month, Year) and unit toggles (g / oz / kg), with the chart directly under. Dark nav, light page. | Their dense mega-menus and marketing clutter. |
-| Robinhood (2024 rebrand) | A serif for headlines on a warm near-black rather than pure black, and a monospaced face with tabular figures for every price and percent. | The neon lime. Gold replaces it. |
-| Stripe | Quiet headings, small UI labels at 13 to 14px, crisp tables, very soft layered shadows. | The purple gradients. |
-| Wise | One accent colour used with discipline, pill buttons, big confident numbers. | The lime and the giant 900-weight type. |
-| The Royal Mint | Gold, silver, black and white as the core identity of a precious-metals brand. | Heritage ornament. |
+| Reference                | What we take                                                                                                                                                                                                           | What we leave                                 |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| BullionByPost            | Price-first page: metal symbol, big price, change, week high and low, then a row of period chips (Live, Today, Week, Month, Year) and unit toggles (g / oz / kg), with the chart directly under. Dark nav, light page. | Their dense mega-menus and marketing clutter. |
+| Robinhood (2024 rebrand) | A serif for headlines on a warm near-black rather than pure black, and a monospaced face with tabular figures for every price and percent.                                                                             | The neon lime. Gold replaces it.              |
+| Stripe                   | Quiet headings, small UI labels at 13 to 14px, crisp tables, very soft layered shadows.                                                                                                                                | The purple gradients.                         |
+| Wise                     | One accent colour used with discipline, pill buttons, big confident numbers.                                                                                                                                           | The lime and the giant 900-weight type.       |
+| The Royal Mint           | Gold, silver, black and white as the core identity of a precious-metals brand.                                                                                                                                         | Heritage ornament.                            |
 
 ## 2. Fonts
 
 All free, on Google Fonts and npm. None of them is Inter, Roboto, Poppins or Space Grotesk, which are the usual AI defaults.
 
-| Role | Font | Weights | Use for |
-|---|---|---|---|
-| Display | **Source Serif 4** | 400, 600 | Page titles, the big price, section headings, the customer quote total |
-| UI | **Geist** | 400, 500, 600 | Navigation, buttons, labels, body copy, table text |
-| Numbers | **Geist Mono** | 400, 500 | Every price, weight, percentage, timestamp, quote ID, SKU |
+| Role    | Font               | Weights       | Use for                                                                |
+| ------- | ------------------ | ------------- | ---------------------------------------------------------------------- |
+| Display | **Source Serif 4** | 400, 600      | Page titles, the big price, section headings, the customer quote total |
+| UI      | **Geist**          | 400, 500, 600 | Navigation, buttons, labels, body copy, table text                     |
+| Numbers | **Geist Mono**     | 400, 500      | Every price, weight, percentage, timestamp, quote ID, SKU              |
 
 Install:
 
@@ -44,10 +44,14 @@ npm i @fontsource-variable/source-serif-4 @fontsource-variable/geist @fontsource
   --font-ui: "Geist Variable", system-ui, sans-serif;
   --font-num: "Geist Mono Variable", ui-monospace, monospace;
 }
-.num { font-family: var(--font-num); font-variant-numeric: tabular-nums slashed-zero; }
+.num {
+  font-family: var(--font-num);
+  font-variant-numeric: tabular-nums slashed-zero;
+}
 ```
 
 Rules:
+
 - Every number that can change must use `.num` so digits do not jump when prices tick.
 - The big price uses `--font-display` at 56px weight 400 with `font-variant-numeric: tabular-nums lining-nums`. This is the one exception to the mono rule.
 - Headings: letter-spacing `-0.01em`. Body: normal. Small caps labels: `0.06em`, uppercase, 11px, weight 500.
@@ -55,16 +59,16 @@ Rules:
 
 ### Type scale
 
-| Token | Size / line height | Font | Weight |
-|---|---|---|---|
-| `--t-price` | 56 / 60 | Display | 400 |
-| `--t-h1` | 36 / 42 | Display | 400 |
-| `--t-h2` | 24 / 30 | Display | 600 |
-| `--t-h3` | 18 / 24 | UI | 600 |
-| `--t-body` | 15 / 22 | UI | 400 |
-| `--t-small` | 13 / 18 | UI | 400 |
-| `--t-label` | 11 / 14 | UI | 500, uppercase |
-| `--t-num` | 14 / 20 | Mono | 500 |
+| Token       | Size / line height | Font    | Weight         |
+| ----------- | ------------------ | ------- | -------------- |
+| `--t-price` | 56 / 60            | Display | 400            |
+| `--t-h1`    | 36 / 42            | Display | 400            |
+| `--t-h2`    | 24 / 30            | Display | 600            |
+| `--t-h3`    | 18 / 24            | UI      | 600            |
+| `--t-body`  | 15 / 22            | UI      | 400            |
+| `--t-small` | 13 / 18            | UI      | 400            |
+| `--t-label` | 11 / 14            | UI      | 500, uppercase |
+| `--t-num`   | 14 / 20            | Mono    | 500            |
 
 Mobile (under 640px): price 40, h1 28, h2 20. Everything else stays.
 
@@ -75,38 +79,39 @@ Contrast checked. Every text pairing below passes WCAG AA (4.5:1 or better).
 ```css
 :root {
   /* Surfaces */
-  --ink:        #16130E; /* warm near-black: nav, primary text, dark panels */
-  --ink-2:      #24201A; /* raised surface on dark */
-  --paper:      #FAF8F3; /* page background, warm off-white */
-  --card:       #FFFFFF; /* cards, tables, inputs */
-  --line:       #E7E2D7; /* borders, dividers, chart grid */
-  --line-dark:  #3A342B; /* borders on dark surfaces */
+  --ink: #16130e; /* warm near-black: nav, primary text, dark panels */
+  --ink-2: #24201a; /* raised surface on dark */
+  --paper: #faf8f3; /* page background, warm off-white */
+  --card: #ffffff; /* cards, tables, inputs */
+  --line: #e7e2d7; /* borders, dividers, chart grid */
+  --line-dark: #3a342b; /* borders on dark surfaces */
 
   /* Text */
-  --text:       #16130E; /* 17.4:1 on paper */
-  --text-muted: #6B6457; /* 5.5:1 on paper, 5.9:1 on white */
-  --text-on-ink:#FAF8F3;
-  --text-on-ink-muted: #A8A397; /* 7.4:1 on ink */
+  --text: #16130e; /* 17.4:1 on paper */
+  --text-muted: #6b6457; /* 5.5:1 on paper, 5.9:1 on white */
+  --text-on-ink: #faf8f3;
+  --text-on-ink-muted: #a8a397; /* 7.4:1 on ink */
 
   /* Gold: the only accent */
-  --gold:       #C9A24A; /* fills, chart line on dark, buttons on dark. Text on it: --ink (7.7:1) */
-  --gold-text:  #8A6418; /* gold text or icons on light surfaces (5.4:1 on white) */
-  --gold-tint:  #F4ECD8; /* selected chip, highlighted row */
+  --gold: #c9a24a; /* fills, chart line on dark, buttons on dark. Text on it: --ink (7.7:1) */
+  --gold-text: #8a6418; /* gold text or icons on light surfaces (5.4:1 on white) */
+  --gold-tint: #f4ecd8; /* selected chip, highlighted row */
 
   /* Silver: secondary metal, used only for silver products */
-  --silver:     #9CA3AB;
+  --silver: #9ca3ab;
 
   /* Status */
-  --up:         #1E7B4F; /* price rise, success, accepted (5.3:1 on white) */
-  --up-tint:    #E3F1E9;
-  --down:       #B4342D; /* price fall, error, expired (6.1:1 on white) */
-  --down-tint:  #F7E3E1;
-  --stale:      #8F5200; /* stale price, warning, reserved */
-  --stale-tint: #FFF4E0; /* 5.7:1 with --stale text */
+  --up: #1e7b4f; /* price rise, success, accepted (5.3:1 on white) */
+  --up-tint: #e3f1e9;
+  --down: #b4342d; /* price fall, error, expired (6.1:1 on white) */
+  --down-tint: #f7e3e1;
+  --stale: #8f5200; /* stale price, warning, reserved */
+  --stale-tint: #fff4e0; /* 5.7:1 with --stale text */
 }
 ```
 
 Rules:
+
 - Gold appears at most **once per panel**: the primary button, the selected chip, or the chart line. Never all three in one place.
 - Up and down colours are only for price movement and quote status. Never decorative.
 - Never use pure `#000` or `#fff` for text. Never use gradients. Never use purple, teal or neon.
@@ -116,15 +121,23 @@ Rules:
 
 ```css
 :root {
-  --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px;
-  --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 64px;
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
 
-  --r-sm: 6px;    /* inputs, small tags */
-  --r-md: 10px;   /* cards, tables */
-  --r-pill: 999px;/* buttons, chips */
+  --r-sm: 6px; /* inputs, small tags */
+  --r-md: 10px; /* cards, tables */
+  --r-pill: 999px; /* buttons, chips */
 
-  --shadow-1: 0 1px 2px rgba(22,19,14,.06), 0 1px 1px rgba(22,19,14,.04);
-  --shadow-2: 0 8px 24px -8px rgba(22,19,14,.14), 0 2px 4px rgba(22,19,14,.05);
+  --shadow-1:
+    0 1px 2px rgba(22, 19, 14, 0.06), 0 1px 1px rgba(22, 19, 14, 0.04);
+  --shadow-2:
+    0 8px 24px -8px rgba(22, 19, 14, 0.14), 0 2px 4px rgba(22, 19, 14, 0.05);
 
   --page-max: 1240px;
 }
@@ -145,6 +158,7 @@ Rules:
 **Price change pill:** `.num`, 13px, `▲ £21.86 (0.70%)` in `--up` on `--up-tint`, or `▼` in `--down` on `--down-tint`. Always show the arrow so it works without colour.
 
 **Status tag:** 22px tall, `--r-sm`, label style.
+
 - Draft: `--line` bg, `--text-muted`
 - Sent: `--gold-tint`, `--gold-text`
 - Reserved: `--stale-tint`, `--stale`
@@ -165,7 +179,7 @@ Rules:
 
 ```
 ┌───────────────────────────────────────────────────────────────┐
-│ INK NAV  QuoteLedger   Prices  Quotes  Inventory  Activity     │
+│ INK NAV  Aurum Register   Prices  Quotes  Inventory  Activity     │
 │                                   Au £3,152.85 ▲0.70%   [TH ▾]  │
 ├───────────────────────────────────────────────────────────────┤
 │ PAPER                                                           │
@@ -234,7 +248,7 @@ Rules:
 Simple, centred, 560px wide, no dealer nav.
 
 ```
-            QuoteLedger (serif wordmark)
+            Aurum Register (serif wordmark)
    ┌───────────────────────────────────────┐
    │ Quote Q-0142 for Daniel                │
    │ Expires in  04:59  ▬▬▬▬▬▬▬▬▬▬░░        │

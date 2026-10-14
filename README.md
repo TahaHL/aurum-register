@@ -1,9 +1,8 @@
-# QuoteLedger
+# Aurum Register
 
-[Open the live demo](https://quoteledger-al9r.onrender.com/) · [Verified PostgreSQL and browser CI](https://github.com/TahaHL/quoteledger/actions/runs/38501869104)
+[Open the live demo](https://quoteledger-al9r.onrender.com/) · [Verified PostgreSQL and browser CI](https://github.com/TahaHL/aurum-register/actions/runs/38501869104)
 
-![QuoteLedger quality](https://github.com/TahaHL/quoteledger/actions/workflows/quality.yml/badge.svg)
-
+![Aurum Register quality](https://github.com/TahaHL/aurum-register/actions/workflows/quality.yml/badge.svg)
 
 A fictional precious-metals dealer desk built with React, TypeScript, Express and PostgreSQL. It connects pricing to physical inventory: issue a fixed-price quote, reserve stock, record a sale or release the hold. Buy-back offers bring assessed customer gold into inventory after owner inspection.
 
@@ -24,9 +23,9 @@ Open http://127.0.0.1:5187. The API runs on 3107. The default local database is 
 
 Choose Enter as owner or Enter as staff. These intentionally public fictional accounts use the normal authentication flow:
 
-| Role | Email | Password | Permissions |
-| --- | --- | --- | --- |
-| Owner | owner@quoteledger.demo | Demo-owner-2026! | Inventory, premiums, quotes, sale/release and buy-back receipt/cancellation |
+| Role  | Email                  | Password         | Permissions                                                                                     |
+| ----- | ---------------------- | ---------------- | ----------------------------------------------------------------------------------------------- |
+| Owner | owner@quoteledger.demo | Demo-owner-2026! | Inventory, premiums, quotes, sale/release and buy-back receipt/cancellation                     |
 | Staff | staff@quoteledger.demo | Demo-staff-2026! | Issue offers and receive new inventory; cannot change existing stock/premiums or close outcomes |
 
 ## Dealer workflow
@@ -45,7 +44,7 @@ The server retrieves GBP gold prices from Gold-API.com every thirty seconds and 
 
 Live and 1 day show actually collected observations, not invented intraday backfill. Longer ranges use Frankfurter daily XAU/GBP reference data: 1 week, 3 months, 6 months, 1 year, 2 years, 3 years, 5 years, 10 years and All time. The available reference series starts 6 January 1999. Reference prices are labelled separately and never execute a quote. Historical data is cached for six hours; recorded intraday observations are retained for seven days. Gaps break the line. Keyboard inspection, a data table, unit conversion and CSV export are supported. At most 500 sampled real points preserve endpoints and extrema; CSV exports the plotted observations.
 
-**Weekend policy:** new live-price offers pause Friday 21:00 UTC through Sunday 22:00 UTC. This is QuoteLedger's conservative desk schedule, not a provider market-status claim. Quotes also require a provider observation less than 120 seconds old after reopening. Existing locked offers and stock actions retain their normal expiry rules. Fixture mode remains available all week. Actual Saturday provider timestamp behavior has not been observed; `npm run check:price` collects a read-only observation. See [operations](docs/DEPLOYMENT.md).
+**Weekend policy:** new live-price offers pause Friday 21:00 UTC through Sunday 22:00 UTC. This is Aurum Register's conservative desk schedule, not a provider market-status claim. Quotes also require a provider observation less than 120 seconds old after reopening. Existing locked offers and stock actions retain their normal expiry rules. Fixture mode remains available all week. Actual Saturday provider timestamp behavior has not been observed; `npm run check:price` collects a read-only observation. See [operations](docs/DEPLOYMENT.md).
 
 ## Key engineering decisions
 
@@ -85,7 +84,9 @@ Set TEST_DATABASE_URL to a disposable native PostgreSQL database for all five ra
 - `server/auth.ts`: authentication and sessions.
 - `server/prices.ts`, `price-history.ts`, `historical-gold.ts`: feed, observations and reference history.
 - `src/components/`: dealer/customer views, forms, chart and audit history.
-- `src/styles.css`: one consolidated stylesheet, with 328 shadowed declarations removed. Mobile places the dealing ticket above the chart and keeps quote actions visible.
+- `src/styles.css`: one consolidated stylesheet, with 328 shadowed declarations removed. The price screen pairs a market canvas with stock rows. Quote entry opens as a desktop side slip or full-screen mobile task; mobile navigation stays at the bottom. See [interface decisions](docs/INTERFACE.md).
 - `server/migrations/`, `tests/`: database integrity and behavior checks.
 
 Current lists cap inventory at 200 lots and each history at 50 records. Search covers loaded lots only. Partial sales, reversals, payments, refunds, taxes, shipping, account provisioning and password reset are outside this fictional release. Historical design/review documents under docs describe earlier milestones; this README describes the current implementation.
+
+The original internal database names and demo login email addresses are retained for compatibility with existing saved data. Public product branding is Aurum Register.

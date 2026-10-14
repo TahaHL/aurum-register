@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: quoteledger
+    name: aurum-register
     runtime: node
     plan: free
     region: frankfurt
