@@ -5468,15 +5468,50 @@ td {
     font-size: 34px;
   }
 }
-
 /* Plain operational headings for Aurum Register. */
-.register-mark { display: inline-flex; align-items: center; justify-content: center; width: 33px; height: 33px; border: 1px solid #a7b79f; color: #e5ce94; font-family: Georgia, serif; font-size: 16px; letter-spacing: -2px; padding-right: 2px; }
-.counter-heading h1 { font-family: var(--font-ui); font-size: 34px; font-weight: 500; line-height: 1.2; letter-spacing: -1.2px; }
-.counter-layout .ledger-wordmark { gap: 12px; font-size: 22px; }
+.register-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 33px;
+  height: 33px;
+  border: 1px solid #a7b79f;
+  color: #e5ce94;
+  font-family: Georgia, serif;
+  font-size: 16px;
+  letter-spacing: -2px;
+  padding-right: 2px;
+}
+.counter-heading h1 {
+  font-family: var(--font-ui);
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -1.2px;
+}
+.counter-layout .ledger-wordmark {
+  gap: 12px;
+  font-size: 22px;
+}
 @media (max-width: 760px) {
-  .counter-heading { flex-wrap: wrap; align-items: center; }
-  .counter-heading h1 { font-size: 27px; letter-spacing: -.8px; }
-  .counter-heading > div { width: 100%; }
-  .counter-layout .new-ticket { width: 100%; justify-content: center; margin-top: 4px; min-height: 44px; }
-  .counter-layout .ledger-wordmark { font-size: 21px; }
+  .counter-heading {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .counter-heading h1 {
+    font-size: 27px;
+    letter-spacing: -0.8px;
+  }
+  .counter-heading > div {
+    width: 100%;
+  }
+  .counter-layout .new-ticket {
+    width: 100%;
+    justify-content: center;
+    margin-top: 4px;
+    min-height: 44px;
+  }
+  .counter-layout .ledger-wordmark {
+    font-size: 21px;
+  }
 }
