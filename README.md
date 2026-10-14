@@ -1,6 +1,6 @@
 # Aurum Register
 
-[Open the live demo](https://quoteledger-al9r.onrender.com/) · [Verified PostgreSQL and browser CI](https://github.com/TahaHL/aurum-register/actions/runs/38501869104)
+[Open the live demo](https://aurum-register-demo.onrender.com/) · [Verified PostgreSQL and browser CI](https://github.com/TahaHL/aurum-register/actions/runs/38506777990)
 
 ![Aurum Register quality](https://github.com/TahaHL/aurum-register/actions/workflows/quality.yml/badge.svg)
 
