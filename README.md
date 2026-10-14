@@ -1,5 +1,10 @@
 # QuoteLedger
 
+[Open the live demo](https://quoteledger-al9r.onrender.com/) · [Verified PostgreSQL and browser CI](https://github.com/TahaHL/quoteledger/actions/runs/38501869104)
+
+![QuoteLedger quality](https://github.com/TahaHL/quoteledger/actions/workflows/quality.yml/badge.svg)
+
+
 A fictional precious-metals dealer desk built with React, TypeScript, Express and PostgreSQL. It connects pricing to physical inventory: issue a fixed-price quote, reserve stock, record a sale or release the hold. Buy-back offers bring assessed customer gold into inventory after owner inspection.
 
 All stock and customer references are fictional. No money is collected, transferred or verified. Built with AI assistance; the business rules and verification limits below are explicit.
@@ -66,11 +71,11 @@ npm run test:browser
 
 Local result: **66 unit/domain/API tests pass; five native PostgreSQL race tests skip without TEST_DATABASE_URL.** Typecheck/build pass. The 15 browser scenarios cover buying/receiving, premiums, selling/releasing, authentication, inventory, chart ranges, responsive layouts and automated axe checks. Browser tests use a separate port and timestamped database by default.
 
-Set TEST_DATABASE_URL to a disposable native PostgreSQL database for all five race tests. They cover final-unit acceptance, receipt retries, sale retries, sale-versus-release and buy-back receipt retries in an isolated schema. CI provisions PostgreSQL 18 and runs these plus the browser suite. Native startup is blocked by the local Windows sandbox; GitHub CI evidence is recorded after publication. An external review reported successful earlier reservation stress tests, but that is not a substitute for running the current suite.
+Set TEST_DATABASE_URL to a disposable native PostgreSQL database for all five race tests. They cover final-unit acceptance, receipt retries, sale retries, sale-versus-release and buy-back receipt retries in an isolated schema. CI provisions PostgreSQL 18 and runs these plus the browser suite. GitHub CI on 14 October 2026 passed all 71 tests, including the five native PostgreSQL concurrency tests, and all 15 browser scenarios. The production build and typecheck also passed. Native startup remains blocked only in the local Windows sandbox.
 
 ## Deployment
 
-[Render configuration and limitations](docs/DEPLOYMENT.md). `render.yaml` requests only a free web service, with a generated session secret and an externally supplied Neon Free PostgreSQL connection. Automatic deployment is disabled; check CI before manually deploying. Render was verified with no payment card and $0 projected charges; Neon is on Free ($0/month). Free-tier limits can suspend service, and free web services sleep when idle. No paid upgrades are authorised. Hosted publication is verified separately from local checks. Docker configuration is supplied but has not been run locally because Docker is unavailable.
+[Render configuration and limitations](docs/DEPLOYMENT.md). `render.yaml` requests only a free web service, with a generated session secret and an externally supplied Neon Free PostgreSQL connection. Automatic deployment is disabled; check CI before manually deploying. Render was verified with no payment card and $0 projected charges; Neon is on Free ($0/month). Free-tier limits can suspend service, and free web services sleep when idle. No paid upgrades are authorised. The hosted demo was verified on 14 October 2026: owner login, live prices, reference chart loading, customer acceptance, completed sale with stock deduction, and buy-back issue/cancellation. A fictional sample sale and cancelled offer remain in its audit trail. Docker configuration is supplied but has not been run locally because Docker is unavailable.
 
 ## Code map and limitations
 
