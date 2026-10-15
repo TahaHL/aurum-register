@@ -1,66 +1,58 @@
-# Aurum Register
+# Hadj Lakehal Metals
 
-[Open the live demo](https://aurum-register-demo.onrender.com/) · [Verified PostgreSQL and browser CI](https://github.com/TahaHL/aurum-register/actions/runs/38506777990)
+A fictional bullion storefront and owner workspace built with **React, TypeScript, Express and PostgreSQL**. Browse 110 products across four metals, lock a price, place a simulated order and follow its stock allocation through the owner's reports.
 
-![Aurum Register quality](https://github.com/TahaHL/aurum-register/actions/workflows/quality.yml/badge.svg)
+[CI checks](https://github.com/TahaHL/aurum-register/actions) · [Architecture and decisions](docs/STORE_ARCHITECTURE.md) · [Portfolio case study](docs/CASE_STUDY.md)
 
-A fictional precious-metals dealer desk built with React, TypeScript, Express and PostgreSQL. It connects pricing to physical inventory: issue a fixed-price quote, reserve stock, record a sale or release the hold. Buy-back offers bring assessed customer gold into inventory after owner inspection.
+**Release status:** this store replaces the earlier Aurum Register dealer-only application. The [existing hosted demo](https://aurum-register-demo.onrender.com/) may still show the previous release until its manual deployment completes. Local development is fully functional.
 
-All stock and customer references are fictional. No money is collected, transferred or verified. Built with AI assistance; the business rules and verification limits below are explicit.
+No real payments, card details or shipping. Stock and orders are fictional. Built with AI assistance; implementation decisions and verification limits are documented.
 
-![Dealer workspace](docs/screenshots/desktop.png)
+![Customer storefront](docs/screenshots/storefront.png)
+![Owner overview](docs/screenshots/store-admin.png)
 
-## Run locally
+## Try it locally
 
-Node 24 or later:
+Requires Node 24+:
 
-```bash
+```sh
 npm ci
 npm run dev
 ```
 
-Open http://127.0.0.1:5187. The API runs on 3107. The default local database is persistent PGlite in ignored `.local/demo-v2`; no database installation or API key is needed. The previous `.local/preview-postgres` dataset is preserved. Restart the dev process after server edits; frontend changes use Vite HMR.
+Open http://127.0.0.1:5187. Persistent local PGlite requires no database installation. Prices use free public endpoints; no paid API key is needed. The first launch fetches reference history and seeds the catalogue, so startup can take longer than subsequent launches. For a fully offline, explicitly simulated feed, set `PRICE_PROVIDER=fixture`.
 
-Choose Enter as owner or Enter as staff. These intentionally public fictional accounts use the normal authentication flow:
+Use **Switch view** at the top:
 
-| Role  | Email                  | Password         | Permissions                                                                                     |
-| ----- | ---------------------- | ---------------- | ----------------------------------------------------------------------------------------------- |
-| Owner | owner@quoteledger.demo | Demo-owner-2026! | Inventory, premiums, quotes, sale/release and buy-back receipt/cancellation                     |
-| Staff | staff@quoteledger.demo | Demo-staff-2026! | Issue offers and receive new inventory; cannot change existing stock/premiums or close outcomes |
+- **Customer store:** browse metals, quantity tiers and the basket.
+- **Customer account:** enter as a fictional customer and see your orders/holdings.
+- **Owner demo · Admin:** enter the fictional owner workspace directly.
+- **Dealer desk:** issue fixed-price gold quotes, reserve stock, record sales/releases and inspect buy-backs.
 
-## Dealer workflow
+The default local API uses port 3107. Restart the backend after server changes; frontend edits use Vite HMR. Localhost is only available on the machine running it.
 
-- **Sell:** choose a lot, quantity and premium, then issue a five-minute quote. The price snapshot is immutable. A private customer link accepts it and reserves stock for fifteen minutes. Owner Mark sold decreases total and reserved units together; Release now decreases only reserved units. The expiry worker releases remaining holds automatically.
-- **Buy back:** assess weight, purity and quantity; quote spot minus a discount. Customer acceptance starts a fifteen-minute inspection window without changing stock. The owner must confirm the assessment matches before receiving one new lot. Changed assessments need a new offer. Receipt and cancellation are audited and retry-safe.
-- **Inventory:** receive lots, correct counts with a reason, and set individual default premiums. Corrections cannot remove held stock. A lot's premium loads into new tickets and catalogue estimates; existing quotes never reprice.
-- **Customer pages:** show Taha Hadj Lakehal as dealer, the offer breakdown and next steps. Status refreshes every five seconds until closed. No contact details were supplied, so customers are directed back to whoever sent the link.
-- **Activity:** append-only records include actor, reason, quantity, original quoted value and stock counts where relevant.
+## What it demonstrates
 
-Fresh demo stock includes a 20g bar, 100g bar, Gold Britannia and Sovereign with sample premiums of 4%, 2%, 5% and 6%. Scrap is assessed through Buy-backs rather than seeded as a retail-premium quote. Product weights and purity use the application's stated precision and fictional sample quantities.
+- Decimal pricing with integer pence, milligrams and basis points; per-product quantity tiers and separate VAT.
+- Four independently cached metal feeds and reference charts. Live/1D contains actual collected observations; longer periods use labelled daily reference data.
+- Separate customer/dealer identities, scrypt passwords, server sessions, origin checks and server-enforced owner/staff permissions.
+- Immutable ten-minute checkout locks. Native PostgreSQL row locks allocate lots FIFO without consuming reserved stock. Stock, order lines, allocations and audit events commit atomically.
+- Retry-safe checkout and owner cancellation that restores the exact original allocations once.
+- Owner charts, inventory cost/spot valuation, realised FIFO profit, CSV and current stock alerts. Staff do not receive cost or profit fields.
 
-## Prices and charts
+## Key decisions
 
-The server retrieves GBP gold prices from Gold-API.com every thirty seconds and publishes updates through SSE. Failed providers never silently substitute fictional data. `PRICE_PROVIDER=fixture` selects an explicitly simulated offline feed; optional `PRICE_PROVIDER=goldapi` requires a server-only `GOLDAPI_KEY` and its key-backed delivery remains unverified.
+A price lock guarantees a price until expiry, not stock. Checkout checks availability again inside the transaction. Lots lock in `(product_id, acquired_at, id)` order to keep concurrent requests consistent. Expiry is checked after waiting for locks.
 
-Live and 1 day show actually collected observations, not invented intraday backfill. Longer ranges use Frankfurter daily XAU/GBP reference data: 1 week, 3 months, 6 months, 1 year, 2 years, 3 years, 5 years, 10 years and All time. The available reference series starts 6 January 1999. Reference prices are labelled separately and never execute a quote. Historical data is cached for six hours; recorded intraday observations are retained for seven days. Gaps break the line. Keyboard inspection, a data table, unit conversion and CSV export are supported. At most 500 sampled real points preserve endpoints and extrema; CSV exports the plotted observations.
+Money is stored as integer pence. Displayed unit prices reconcile with line totals; VAT is separate from revenue. Unknown acquisition costs remain unknown rather than creating misleading profit.
 
-**Weekend policy:** new live-price offers pause Friday 21:00 UTC through Sunday 22:00 UTC. This is Aurum Register's conservative desk schedule, not a provider market-status claim. Quotes also require a provider observation less than 120 seconds old after reopening. Existing locked offers and stock actions retain their normal expiry rules. Fixture mode remains available all week. Actual Saturday provider timestamp behavior has not been observed; `npm run check:price` collects a read-only observation. See [operations](docs/DEPLOYMENT.md).
+PGlite makes local setup easy but does not prove multi-connection race safety. The native test suite and CI PostgreSQL service exercise competing checkout requests.
 
-## Key engineering decisions
-
-- Weight is integer milligrams; fineness is parts per 10,000; premiums/discounts are basis points. Decimal.js handles arithmetic. Money rounds half-up at the final pence boundary. One troy ounce is 31.1034768g.
-- Example: 10g, 99.99% gold, fictional £2,100/oz and 3% premium gives £675.10 base + £20.25 = £695.35. A 3% buy-back discount gives £654.85. Breakdowns reconcile exactly in pence.
-- Acceptance locks quote then inventory lot. Sale/release locks reservation then lot, matching expiry cleanup. Expiry is checked after waiting for locks. Stock changes and audit events commit in the same transaction.
-- Durable request IDs make acceptance, inventory receipt/correction and final outcomes retry-safe. Changed payloads with reused IDs fail. A buy-back receipt creates stock only once. PGlite's single session cannot prove native concurrent-client behavior.
-- Database triggers protect price snapshots and append-only events. Dealer-scoped queries and composite foreign keys protect tenant boundaries. Role checks are enforced in domain methods, not only hidden buttons.
-- Passwords use salted scrypt. Sessions use a database store, signed HttpOnly/SameSite cookies and an absolute eight-hour lifetime. Login regenerates session IDs; logout invalidates them. Mutations require the configured Origin and JSON. Customer tokens are hashed at rest.
-- Production requires a native DATABASE_URL, HTTPS origin and a persistent session secret. Demo accounts are off by default in production; the Render fictional demo enables them explicitly.
-
-These are implementation notes. Before an interview, explain the rules in your own words and trace one acceptance, one completed sale and one buy-back receipt through the code.
+The dealer ticket stays separate from catalogue checkout: packs, quantity tiers and VAT must not accidentally pass through the older single-item gold quote calculation.
 
 ## Verification
 
-```bash
+```sh
 npm run typecheck
 npm test
 npm run build
@@ -68,25 +60,14 @@ npx playwright install chromium
 npm run test:browser
 ```
 
-Local result: **66 unit/domain/API tests pass; five native PostgreSQL race tests skip without TEST_DATABASE_URL.** Typecheck/build pass. The 15 browser scenarios cover buying/receiving, premiums, selling/releasing, authentication, inventory, chart ranges, responsive layouts and automated axe checks. Browser tests use a separate port and timestamped database by default.
+Set `TEST_DATABASE_URL` to an isolated native PostgreSQL database to run the six concurrency tests; they skip in PGlite-only runs. Tests create disposable random schemas. CI provisions PostgreSQL 18 and runs the full domain/API and browser suites. Consult the linked workflow for the exact pushed revision rather than treating earlier passing runs as current evidence.
 
-Set TEST_DATABASE_URL to a disposable native PostgreSQL database for all five race tests. They cover final-unit acceptance, receipt retries, sale retries, sale-versus-release and buy-back receipt retries in an isolated schema. CI provisions PostgreSQL 18 and runs these plus the browser suite. GitHub CI on 14 October 2026 passed all 71 tests, including the five native PostgreSQL concurrency tests, and all 15 browser scenarios. The production build and typecheck also passed. Native startup remains blocked only in the local Windows sandbox.
+Browser coverage includes checkout/cancellation, pricing controls, view switching, chart controls, authentication, staff data restrictions, responsive layouts and axe accessibility scans. Automated scans do not establish complete accessibility conformance.
 
-## Deployment
+## Scope and limitations
 
-[Render configuration and limitations](docs/DEPLOYMENT.md). `render.yaml` requests only a free web service, with a generated session secret and an externally supplied Neon Free PostgreSQL connection. Automatic deployment is disabled; check CI before manually deploying. Render was verified with no payment card and $0 projected charges; Neon is on Free ($0/month). Free-tier limits can suspend service, and free web services sleep when idle. No paid upgrades are authorised. The hosted demo was verified on 14 October 2026: owner login, live prices, reference chart loading, customer acceptance, completed sale with stock deduction, and buy-back issue/cancellation. A fictional sample sale and cancelled offer remain in its audit trail. Docker configuration is supplied but has not been run locally because Docker is unavailable.
+This is a portfolio demo, not an operating bullion business. Product specifications are supplied sample data and have not all been verified against mint sources. Original SVG illustrations are not product photographs. The tax model is deliberately simplified; see the architecture document.
 
-## Code map and limitations
+Public feeds can fail or become stale; new executable locks then pause. No fabricated market history is silently substituted. Seeded sales are explicitly simulated. Customer order timelines, guides, email, password recovery, shipping integrations and real payments are not complete production features.
 
-- `server/ledger.ts`: inventory, sales, reservations and atomic outcomes.
-- `server/buybacks.ts`: assessed purchase offers, acceptance and inspected receipt.
-- `shared/pricing.ts`, `shared/market-hours.ts`: arithmetic and explicit dealing policy.
-- `server/auth.ts`: authentication and sessions.
-- `server/prices.ts`, `price-history.ts`, `historical-gold.ts`: feed, observations and reference history.
-- `src/components/`: dealer/customer views, forms, chart and audit history.
-- `src/styles.css`: one consolidated stylesheet, with 328 shadowed declarations removed. The price screen pairs a market canvas with stock rows. Quote entry opens as a desktop side slip or full-screen mobile task; mobile navigation stays at the bottom. See [interface decisions](docs/INTERFACE.md).
-- `server/migrations/`, `tests/`: database integrity and behavior checks.
-
-Current lists cap inventory at 200 lots and each history at 50 records. Search covers loaded lots only. Partial sales, reversals, payments, refunds, taxes, shipping, account provisioning and password reset are outside this fictional release. Historical design/review documents under docs describe earlier milestones; this README describes the current implementation.
-
-The original internal database names and demo login email addresses are retained for compatibility with existing saved data. Public product branding is Aurum Register.
+[Deployment notes](docs/DEPLOYMENT.md). Existing hosting configuration requests only a free Render web service and an external database. Auto-deployment is disabled. No paid upgrade is authorised. Internal database/login names and the existing remote URL are retained for compatibility.

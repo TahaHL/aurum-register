@@ -1,5 +1,5 @@
 {
-  "name": "aurum-register",
+  "name": "hadj-lakehal-metals",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -20,7 +20,6 @@
     "@electric-sql/pglite": "^0.5.9",
     "@fontsource-variable/geist": "^5.3.0",
     "@fontsource-variable/geist-mono": "^5.3.0",
-    "@fontsource-variable/source-serif-4": "^5.3.1",
     "decimal.js": "^10.6.0",
     "express": "^5.2.1",
     "express-rate-limit": "^8.7.0",
