@@ -1,6 +1,11 @@
+import { installStoreAdmin } from "./store-admin.js";
+import { installShop } from "./shop.js";
+import { Catalogue } from "./catalogue.js";
+import type { MetalMarkets } from "./metals.js";
+import { METALS } from "../shared/types.js";
 import express from "express";
 import helmet from "helmet";
-import { rateLimit } from "express-rate-limit";
+import { createApiLimits } from "./rate-limits.js";
 import { randomUUID } from "node:crypto";
 import path from "node:path";
 import { z, ZodError } from "zod";
@@ -27,6 +32,7 @@ export function createApp(
   databaseKind = "postgresql",
   authentication: AuthOptions = authOptions(origin),
   priceHistory?: PriceHistoryStore,
+  markets?: MetalMarkets,
 ) {
   const app = express();
   const streams = new Set<express.Response>();
@@ -62,23 +68,55 @@ export function createApp(
     next();
   });
   app.use(express.json({ limit: "16kb" }));
-  app.use(
-    "/api",
-    rateLimit({
-      windowMs: 60000,
-      limit: 200,
-      standardHeaders: "draft-8",
-      legacyHeaders: false,
-    }),
-  );
+  const limits = createApiLimits();
+  app.use("/api", limits.reads, limits.writes);
   app.get("/api/health", async (_req, res) => {
     await ledger.pool.query("SELECT 1");
     res.json({ status: "ok", database: databaseKind, mode: "fictional-demo" });
   });
   const { requireDealer } = installAuth(app, ledger.pool, authentication);
-  app.get("/api/workspace", requireDealer, async (_req, res) =>
-    res.json(await ledger.workspace((res.locals.user as DealerUser).dealerId)),
+  if (markets) {
+    const catalogue = new Catalogue(ledger.pool, markets);
+    installShop(app, catalogue, authentication.demoAccounts, requireDealer);
+    installStoreAdmin(app, catalogue, requireDealer);
+    app.get("/api/catalogue", async (req, res) =>
+      res.json(await catalogue.list(req.query)),
+    );
+    app.get("/api/products/:slug", async (req, res) =>
+      res.json(
+        await catalogue.product(
+          String(req.params.slug),
+          z.coerce
+            .number()
+            .int()
+            .min(1)
+            .max(1000)
+            .parse(req.query.qty || 1),
+        ),
+      ),
+    );
+  }
+  app.get("/api/workspace", requireDealer, async (_req, res) => {
+    const workspace = await ledger.workspace(
+      (res.locals.user as DealerUser).dealerId,
+    );
+    if (res.locals.user.role !== "owner")
+      workspace.events = workspace.events.filter(
+        (e) => !e.type.startsWith("store."),
+      );
+    res.json(workspace);
+  });
+  app.get("/api/metals", (_req, res) =>
+    res.json(markets?.state() || { XAU: feed.state() }),
   );
+  app.get("/api/metals/:metal/history", async (req, res) => {
+    const metal = z.enum(METALS).parse(req.params.metal);
+    const range = z.enum(PRICE_RANGES).parse(req.query.range || "1d");
+    const history =
+      markets?.histories[metal] || (metal === "XAU" ? priceHistory : undefined);
+    if (!history) throw new HttpError(503, "Metal history is not available.");
+    res.json(await history.read(range));
+  });
   app.get("/api/price", (_req, res) => res.json(feed.state()));
   app.get("/api/price/history", async (req, res) => {
     const range = z.enum(PRICE_RANGES).parse(req.query.range || "1h");
@@ -87,17 +125,21 @@ export function createApp(
     res.json(await priceHistory.read(range));
   });
   app.post("/api/price/refresh", requireDealer, async (_req, res) => {
-    await feed.refresh();
+    if (markets) await markets.refresh();
+    else await feed.refresh();
     broadcast();
     res.json(feed.state());
   });
-  app.get("/api/price/stream", (req, res) => {
+  app.get("/api/price/stream", limits.stream, (req, res) => {
     res.setHeader("Content-Type", "text/event-stream");
     res.setHeader("Connection", "keep-alive");
     res.setHeader("X-Accel-Buffering", "no");
     res.flushHeaders();
     res.write("retry: 3000\n\n");
     res.write(`event: price\ndata: ${JSON.stringify(feed.state())}\n\n`);
+    res.write(
+      `event: metals\ndata: ${JSON.stringify(markets?.state() || { XAU: feed.state() })}\n\n`,
+    );
     streams.add(res);
     const heartbeat = setInterval(() => res.write(": heartbeat\n\n"), 15000);
     req.on("close", () => {
@@ -247,8 +289,12 @@ export function createApp(
     },
   );
   function broadcast() {
-    for (const response of streams)
+    for (const response of streams) {
       response.write(`event: price\ndata: ${JSON.stringify(feed.state())}\n\n`);
+      response.write(
+        `event: metals\ndata: ${JSON.stringify(markets?.state() || { XAU: feed.state() })}\n\n`,
+      );
+    }
   }
   return {
     app,

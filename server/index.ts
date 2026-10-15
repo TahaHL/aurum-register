@@ -1,3 +1,6 @@
+import { seedStoreOrders } from "./seed-store-orders.js";
+import { Catalogue } from "./catalogue.js";
+import { seedCatalogue } from "./catalogue.js";
 import { openDatabase } from "./database.js";
 import { migrate, seed } from "./migrate.js";
 import {
@@ -6,6 +9,7 @@ import {
   goldApiProvider,
   publicGoldProvider,
 } from "./prices.js";
+import { MetalMarkets } from "./metals.js";
 import { PriceHistoryStore } from "./price-history.js";
 import type { PriceSnapshot } from "../shared/types.js";
 import { Ledger } from "./ledger.js";
@@ -37,7 +41,16 @@ const feed = new PriceFeed(
   120000,
   (snapshot) => priceHistory.append(snapshot),
 );
-await feed.refresh();
+const markets = new MetalMarkets(
+  database.pool,
+  feed,
+  priceHistory,
+  provider === "fixture",
+);
+await markets.refresh();
+await seedCatalogue(database.pool, markets);
+if (authentication.demoAccounts)
+  await seedStoreOrders(new Catalogue(database.pool, markets));
 const ledger = new Ledger(database.pool, feed);
 await ledger.releaseExpired();
 const { app, broadcast, closeStreams } = createApp(
@@ -47,6 +60,7 @@ const { app, broadcast, closeStreams } = createApp(
   database.kind,
   authentication,
   priceHistory,
+  markets,
 );
 const server = app.listen(
   Number(process.env.PORT || 3107),
@@ -58,7 +72,7 @@ const server = app.listen(
 );
 let sweeping = false;
 const priceTimer = setInterval(() => {
-  void feed.refresh().then(broadcast);
+  void markets.refresh().then(broadcast);
 }, 30000);
 const reservationTimer = setInterval(() => {
   if (sweeping) return;
