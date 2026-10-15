@@ -47,13 +47,13 @@ export default function SignIn({
   }
   return (
     <main className="sign-in-shell">
-      <section className="sign-in-story" aria-label="About Aurum Register">
+      <section className="sign-in-story" aria-label="About Hadj Lakehal Metals">
         <a className="brand" href="/">
           <span className="brand-mark">
             <GoldMark />
           </span>
           <span>
-            Aurum Register<small>PRECIOUS METALS DESK</small>
+            Hadj Lakehal Metals<small>PRECIOUS METALS DESK</small>
           </span>
         </a>
         <div className="sign-in-intro">
@@ -85,7 +85,8 @@ export default function SignIn({
       </section>
       <section className="sign-in-form-side" aria-labelledby="sign-in-heading">
         <div className="sign-in-card">
-          <h2 id="sign-in-heading">Sign in to Aurum Register</h2>
+          <p><a href="/prices/xau">View public metal prices</a></p>
+          <h2 id="sign-in-heading">Sign in to Hadj Lakehal Metals</h2>
           <p className="sign-in-description">
             Sign in with your dealer account, or explore the fictional demo
             below.

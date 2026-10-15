@@ -82,7 +82,7 @@ export default function ReservationDialog({
         </p>
         <p className="reservation-explanation">
           {sold
-            ? "This permanently removes the reserved units from inventory and records the sale at the original quoted price. Aurum Register does not collect or verify payment."
+            ? "This permanently removes the reserved units from inventory and records the sale at the original quoted price. Hadj Lakehal Metals does not collect or verify payment."
             : "The held units become available to other customers immediately. Total inventory stays the same. This quote cannot be accepted again."}
         </p>
         <label>
