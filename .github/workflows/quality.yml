@@ -1,4 +1,4 @@
-name: Aurum Register quality
+name: Hadj Lakehal Metals quality
 on: [push, pull_request]
 permissions:
   contents: read
