@@ -1,0 +1,5108 @@
+{
+ "_note": "Fictional demo catalogue. Product range modelled on atkinsonsbullion.com (gold, silver) and gold.co.uk (platinum, palladium) listings checked 14 Oct 2026. Premiums, buy-back discounts and stock are invented round figures, not copied prices. Weights and finenesses are standard published specs; confirm each against the mint or refiner before treating as authoritative. No images, descriptions or logos were copied.",
+ "tierSchedule": [
+  {
+   "minQuantity": 1,
+   "premiumReductionBps": 0
+  },
+  {
+   "minQuantity": 2,
+   "premiumReductionBps": 30
+  },
+  {
+   "minQuantity": 5,
+   "premiumReductionBps": 60
+  },
+  {
+   "minQuantity": 10,
+   "premiumReductionBps": 100
+  },
+  {
+   "minQuantity": 25,
+   "premiumReductionBps": 140
+  },
+  {
+   "minQuantity": 100,
+   "premiumReductionBps": 180
+  }
+ ],
+ "premiumFloorBps": 100,
+ "products": [
+  {
+   "sku": "AU-B-1G-RM",
+   "slug": "the-royal-mint-britannia-1g-gold-bar",
+   "name": "The Royal Mint Britannia 1g Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "The Royal Mint",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 1000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 1000,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 2500
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 2470
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 2440
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 2400
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 2360
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 2320
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 40
+  },
+  {
+   "sku": "AU-B-5G-RM",
+   "slug": "the-royal-mint-britannia-5g-gold-bar",
+   "name": "The Royal Mint Britannia 5g Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "The Royal Mint",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 5000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 5000,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 900
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 870
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 840
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 800
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 760
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 720
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 15
+  },
+  {
+   "sku": "AU-B-10G-RM",
+   "slug": "the-royal-mint-britannia-10g-gold-bar",
+   "name": "The Royal Mint Britannia 10g Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "The Royal Mint",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 10000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 9999,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 650
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 620
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 590
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 550
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 510
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 470
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 15
+  },
+  {
+   "sku": "AU-B-20G-RM",
+   "slug": "the-royal-mint-britannia-20g-gold-bar",
+   "name": "The Royal Mint Britannia 20g Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "The Royal Mint",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 20000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 19998,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 500
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 470
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 440
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 400
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 360
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 320
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 15
+  },
+  {
+   "sku": "AU-B-1OZ-RM",
+   "slug": "the-royal-mint-britannia-1oz-gold-bar",
+   "name": "The Royal Mint Britannia 1oz Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "The Royal Mint",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31100,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [
+    "best-seller"
+   ],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 380
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 350
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 320
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 280
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 240
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 200
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 15
+  },
+  {
+   "sku": "AU-B-50G-RM",
+   "slug": "the-royal-mint-britannia-50g-gold-bar",
+   "name": "The Royal Mint Britannia 50g Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "The Royal Mint",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 50000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 49995,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 350
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 320
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 290
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 250
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 210
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 170
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 15
+  },
+  {
+   "sku": "AU-B-100G-RM",
+   "slug": "the-royal-mint-britannia-100g-gold-bar",
+   "name": "The Royal Mint Britannia 100g Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "The Royal Mint",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 100000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 99990,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [
+    "best-seller"
+   ],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 300
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 270
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 240
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 200
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 160
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 120
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 6
+  },
+  {
+   "sku": "AU-B-5G-CH",
+   "slug": "c-hafner-5g-minted-gold-bar",
+   "name": "C.Hafner 5g Minted Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "C.Hafner",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 5000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 5000,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 920
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 890
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 860
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 820
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 780
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 740
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 8
+  },
+  {
+   "sku": "AU-B-10G-CH",
+   "slug": "c-hafner-10g-minted-gold-bar",
+   "name": "C.Hafner 10g Minted Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "C.Hafner",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 10000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 9999,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 670
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 640
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 610
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 570
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 530
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 490
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 8
+  },
+  {
+   "sku": "AU-B-20G-CH",
+   "slug": "c-hafner-20g-minted-gold-bar",
+   "name": "C.Hafner 20g Minted Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "C.Hafner",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 20000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 19998,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 520
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 490
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 460
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 420
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 380
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 340
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 8
+  },
+  {
+   "sku": "AU-B-25G-CH",
+   "slug": "c-hafner-25g-minted-gold-bar",
+   "name": "C.Hafner 25g Minted Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "C.Hafner",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 25000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 24998,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 500
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 470
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 440
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 400
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 360
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 320
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 8
+  },
+  {
+   "sku": "AU-B-1OZ-CH-1",
+   "slug": "c-hafner-1oz-minted-gold-bar",
+   "name": "C.Hafner 1oz Minted Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "C.Hafner",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31100,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 400
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 370
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 340
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 300
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 260
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 220
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 8
+  },
+  {
+   "sku": "AU-B-50G-CH",
+   "slug": "c-hafner-50g-minted-gold-bar",
+   "name": "C.Hafner 50g Minted Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "C.Hafner",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 50000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 49995,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 370
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 340
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 310
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 270
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 230
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 190
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 8
+  },
+  {
+   "sku": "AU-B-100G-CH-1",
+   "slug": "c-hafner-100g-minted-gold-bar",
+   "name": "C.Hafner 100g Minted Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "C.Hafner",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 100000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 99990,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 320
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 290
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 260
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 220
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 180
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 140
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 8
+  },
+  {
+   "sku": "AU-B-1OZ-CH-2",
+   "slug": "c-hafner-1oz-cast-gold-bar",
+   "name": "C.Hafner 1oz Cast Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "C.Hafner",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31100,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 360
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 330
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 300
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 260
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 220
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 180
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 5
+  },
+  {
+   "sku": "AU-B-100G-CH-2",
+   "slug": "c-hafner-100g-cast-gold-bar",
+   "name": "C.Hafner 100g Cast Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "C.Hafner",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 100000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 99990,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 280
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 250
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 220
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 180
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 140
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 100
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 5
+  },
+  {
+   "sku": "AU-B-1G-PAMP-FORTUN",
+   "slug": "pamp-suisse-fortuna-1g-gold-bar",
+   "name": "PAMP Suisse Fortuna 1g Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "PAMP Suisse",
+   "category": "gold-bars",
+   "design": "Fortuna",
+   "year": null,
+   "grossWeightMgPerUnit": 1000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 1000,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 2540
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 2510
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 2480
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 2440
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 2400
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 2360
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 10
+  },
+  {
+   "sku": "AU-B-25G-PAMP-FORTUN",
+   "slug": "pamp-suisse-fortuna-2-5g-gold-bar",
+   "name": "PAMP Suisse Fortuna 2.5g Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "PAMP Suisse",
+   "category": "gold-bars",
+   "design": "Fortuna",
+   "year": null,
+   "grossWeightMgPerUnit": 2500,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 2500,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 1540
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 1510
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 1480
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 1440
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 1400
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 1360
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 0
+  },
+  {
+   "sku": "AU-B-5G-PAMP-FORTUN",
+   "slug": "pamp-suisse-fortuna-5g-gold-bar",
+   "name": "PAMP Suisse Fortuna 5g Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "PAMP Suisse",
+   "category": "gold-bars",
+   "design": "Fortuna",
+   "year": null,
+   "grossWeightMgPerUnit": 5000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 5000,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 940
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 910
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 880
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 840
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 800
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 760
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 10
+  },
+  {
+   "sku": "AU-B-10G-PAMP-FORTUN",
+   "slug": "pamp-suisse-fortuna-10g-gold-bar",
+   "name": "PAMP Suisse Fortuna 10g Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "PAMP Suisse",
+   "category": "gold-bars",
+   "design": "Fortuna",
+   "year": null,
+   "grossWeightMgPerUnit": 10000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 9999,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 690
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 660
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 630
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 590
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 550
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 510
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 10
+  },
+  {
+   "sku": "AU-B-20G-PAMP-FORTUN",
+   "slug": "pamp-suisse-fortuna-20g-gold-bar",
+   "name": "PAMP Suisse Fortuna 20g Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "PAMP Suisse",
+   "category": "gold-bars",
+   "design": "Fortuna",
+   "year": null,
+   "grossWeightMgPerUnit": 20000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 19998,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 540
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 510
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 480
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 440
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 400
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 360
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 10
+  },
+  {
+   "sku": "AU-B-12OZ-PAMP-FORTUN",
+   "slug": "pamp-suisse-fortuna-1-2oz-gold-bar",
+   "name": "PAMP Suisse Fortuna 1/2oz Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "PAMP Suisse",
+   "category": "gold-bars",
+   "design": "Fortuna",
+   "year": null,
+   "grossWeightMgPerUnit": 15552,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 15550,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 590
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 560
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 530
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 490
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 450
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 410
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 10
+  },
+  {
+   "sku": "AU-B-1OZ-PAMP-FORTUN",
+   "slug": "pamp-suisse-fortuna-1oz-gold-bar",
+   "name": "PAMP Suisse Fortuna 1oz Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "PAMP Suisse",
+   "category": "gold-bars",
+   "design": "Fortuna",
+   "year": null,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31100,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 420
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 390
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 360
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 320
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 280
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 240
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 10
+  },
+  {
+   "sku": "AU-B-50G-PAMP-FORTUN",
+   "slug": "pamp-suisse-fortuna-50g-gold-bar",
+   "name": "PAMP Suisse Fortuna 50g Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "PAMP Suisse",
+   "category": "gold-bars",
+   "design": "Fortuna",
+   "year": null,
+   "grossWeightMgPerUnit": 50000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 49995,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 390
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 360
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 330
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 290
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 250
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 210
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 10
+  },
+  {
+   "sku": "AU-B-100G-PAMP-FORTUN",
+   "slug": "pamp-suisse-fortuna-100g-gold-bar",
+   "name": "PAMP Suisse Fortuna 100g Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "PAMP Suisse",
+   "category": "gold-bars",
+   "design": "Fortuna",
+   "year": null,
+   "grossWeightMgPerUnit": 100000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 99990,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 340
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 310
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 280
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 240
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 200
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 160
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 10
+  },
+  {
+   "sku": "AU-B-1G-VAL",
+   "slug": "valcambi-1g-stamped-gold-bar",
+   "name": "Valcambi 1g Stamped Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "Valcambi",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 1000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 1000,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 2500
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 2470
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 2440
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 2400
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 2360
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 2320
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 9
+  },
+  {
+   "sku": "AU-B-25G-VAL",
+   "slug": "valcambi-2-5g-stamped-gold-bar",
+   "name": "Valcambi 2.5g Stamped Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "Valcambi",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 2500,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 2500,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 1500
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 1470
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 1440
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 1400
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 1360
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 1320
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 9
+  },
+  {
+   "sku": "AU-B-5G-VAL",
+   "slug": "valcambi-5g-stamped-gold-bar",
+   "name": "Valcambi 5g Stamped Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "Valcambi",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 5000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 5000,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 900
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 870
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 840
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 800
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 760
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 720
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 9
+  },
+  {
+   "sku": "AU-B-10G-VAL",
+   "slug": "valcambi-10g-stamped-gold-bar",
+   "name": "Valcambi 10g Stamped Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "Valcambi",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 10000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 9999,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 650
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 620
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 590
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 550
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 510
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 470
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 9
+  },
+  {
+   "sku": "AU-B-20G-VAL",
+   "slug": "valcambi-20g-stamped-gold-bar",
+   "name": "Valcambi 20g Stamped Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "Valcambi",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 20000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 19998,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 500
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 470
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 440
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 400
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 360
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 320
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 9
+  },
+  {
+   "sku": "AU-B-1OZ-VAL",
+   "slug": "valcambi-1oz-stamped-gold-bar",
+   "name": "Valcambi 1oz Stamped Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "Valcambi",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31100,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 380
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 350
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 320
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 280
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 240
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 200
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 9
+  },
+  {
+   "sku": "AU-B-50G-VAL",
+   "slug": "valcambi-50g-stamped-gold-bar",
+   "name": "Valcambi 50g Stamped Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "Valcambi",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 50000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 49995,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 350
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 320
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 290
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 250
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 210
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 170
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 9
+  },
+  {
+   "sku": "AU-B-100G-VAL-1",
+   "slug": "valcambi-100g-stamped-gold-bar",
+   "name": "Valcambi 100g Stamped Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "Valcambi",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 100000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 99990,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 300
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 270
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 240
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 200
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 160
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 120
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 9
+  },
+  {
+   "sku": "AU-B-100G-VAL-2",
+   "slug": "valcambi-100g-cast-gold-bar",
+   "name": "Valcambi 100g Cast Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "Valcambi",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 100000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 99990,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 280
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 250
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 220
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 180
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 140
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 100
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 4
+  },
+  {
+   "sku": "AU-B-50G-VAL-COMBIB",
+   "slug": "valcambi-50-x-1g-gold-combibar",
+   "name": "Valcambi 50 x 1g Gold CombiBar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "Valcambi",
+   "category": "gold-bars",
+   "design": "CombiBar",
+   "year": null,
+   "grossWeightMgPerUnit": 50000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 49995,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 600
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 570
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 540
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 500
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 460
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 420
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 3
+  },
+  {
+   "sku": "AU-B-5G-MET",
+   "slug": "metalor-5g-gold-bar",
+   "name": "Metalor 5g Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "Metalor",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 5000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 5000,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 900
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 870
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 840
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 800
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 760
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 720
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 7
+  },
+  {
+   "sku": "AU-B-10G-MET",
+   "slug": "metalor-10g-gold-bar",
+   "name": "Metalor 10g Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "Metalor",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 10000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 9999,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 650
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 620
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 590
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 550
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 510
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 470
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 7
+  },
+  {
+   "sku": "AU-B-20G-MET",
+   "slug": "metalor-20g-gold-bar",
+   "name": "Metalor 20g Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "Metalor",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 20000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 19998,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 500
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 470
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 440
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 400
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 360
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 320
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 7
+  },
+  {
+   "sku": "AU-B-1OZ-MET",
+   "slug": "metalor-1oz-gold-bar",
+   "name": "Metalor 1oz Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "Metalor",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31100,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 380
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 350
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 320
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 280
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 240
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 200
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 7
+  },
+  {
+   "sku": "AU-B-50G-MET",
+   "slug": "metalor-50g-gold-bar",
+   "name": "Metalor 50g Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "Metalor",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 50000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 49995,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 350
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 320
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 290
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 250
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 210
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 170
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 7
+  },
+  {
+   "sku": "AU-B-100G-MET",
+   "slug": "metalor-100g-gold-bar",
+   "name": "Metalor 100g Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "Metalor",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 100000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 99990,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 300
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 270
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 240
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 200
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 160
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 120
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 7
+  },
+  {
+   "sku": "AU-B-250G-MET",
+   "slug": "metalor-250g-gold-bar",
+   "name": "Metalor 250g Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "Metalor",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 250000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 249975,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 260
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 230
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 200
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 160
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 120
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 100
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 2
+  },
+  {
+   "sku": "AU-B-500G-MET",
+   "slug": "metalor-500g-gold-bar",
+   "name": "Metalor 500g Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "Metalor",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 500000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 499950,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 240
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 210
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 180
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 140
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 100
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 100
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 1
+  },
+  {
+   "sku": "AU-B-1KG-MET",
+   "slug": "metalor-1kg-gold-bar",
+   "name": "Metalor 1kg Gold Bar",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "Metalor",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 1000000,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 999900,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 220
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 190
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 160
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 120
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 100
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 100
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 1
+  },
+  {
+   "sku": "AU-B-1OZ-PM",
+   "slug": "perth-mint-1oz-gold-bar-in-assay",
+   "name": "Perth Mint 1oz Gold Bar in Assay",
+   "metal": "XAU",
+   "form": "bar",
+   "brand": "Perth Mint",
+   "category": "gold-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31100,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 420
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 390
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 360
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 320
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 280
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 240
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 6
+  },
+  {
+   "sku": "AU-C-1OZ-RM-BRITAN-1",
+   "slug": "gold-britannia-1oz-coin",
+   "name": "Gold Britannia 1oz Coin",
+   "metal": "XAU",
+   "form": "coin",
+   "brand": "The Royal Mint",
+   "category": "gold-coins",
+   "design": "Britannia",
+   "year": 2027,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31100,
+   "diameterMm": 32.69,
+   "ukLegalTender": true,
+   "tags": [
+    "best-seller",
+    "new-release"
+   ],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 450
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 420
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 390
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 350
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 310
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 270
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 40
+  },
+  {
+   "sku": "AU-C-1OZ-RM-P10-BRITAN",
+   "slug": "gold-britannia-1oz-coin-tube-of-10",
+   "name": "Gold Britannia 1oz Coin - Tube of 10",
+   "metal": "XAU",
+   "form": "coin",
+   "brand": "The Royal Mint",
+   "category": "gold-coins",
+   "design": "Britannia",
+   "year": 2027,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9999,
+   "packQuantity": 10,
+   "fineWeightMgPerPack": 311000,
+   "diameterMm": 32.69,
+   "ukLegalTender": true,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 380
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 350
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 320
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 280
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 240
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 200
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 3
+  },
+  {
+   "sku": "AU-C-1OZ-RM-P100-BRITAN",
+   "slug": "gold-britannia-1oz-coin-monster-box-of-100",
+   "name": "Gold Britannia 1oz Coin - Monster Box of 100",
+   "metal": "XAU",
+   "form": "coin",
+   "brand": "The Royal Mint",
+   "category": "gold-coins",
+   "design": "Britannia",
+   "year": 2027,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9999,
+   "packQuantity": 100,
+   "fineWeightMgPerPack": 3110000,
+   "diameterMm": 32.69,
+   "ukLegalTender": true,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 330
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 300
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 270
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 230
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 190
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 150
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 0
+  },
+  {
+   "sku": "AU-C-12OZ-RM-BRITAN",
+   "slug": "gold-britannia-1-2oz-coin",
+   "name": "Gold Britannia 1/2oz Coin",
+   "metal": "XAU",
+   "form": "coin",
+   "brand": "The Royal Mint",
+   "category": "gold-coins",
+   "design": "Britannia",
+   "year": 2027,
+   "grossWeightMgPerUnit": 15552,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 15550,
+   "diameterMm": 27.0,
+   "ukLegalTender": true,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 650
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 620
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 590
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 550
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 510
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 470
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 12
+  },
+  {
+   "sku": "AU-C-14OZ-RM-BRITAN",
+   "slug": "gold-britannia-1-4oz-coin",
+   "name": "Gold Britannia 1/4oz Coin",
+   "metal": "XAU",
+   "form": "coin",
+   "brand": "The Royal Mint",
+   "category": "gold-coins",
+   "design": "Britannia",
+   "year": 2027,
+   "grossWeightMgPerUnit": 7776,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 7775,
+   "diameterMm": 22.0,
+   "ukLegalTender": true,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 800
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 770
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 740
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 700
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 660
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 620
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 12
+  },
+  {
+   "sku": "AU-C-110OZ-RM-BRITAN",
+   "slug": "gold-britannia-1-10oz-coin",
+   "name": "Gold Britannia 1/10oz Coin",
+   "metal": "XAU",
+   "form": "coin",
+   "brand": "The Royal Mint",
+   "category": "gold-coins",
+   "design": "Britannia",
+   "year": 2027,
+   "grossWeightMgPerUnit": 3110,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 3110,
+   "diameterMm": 16.5,
+   "ukLegalTender": true,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 1200
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 1170
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 1140
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 1100
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 1060
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 1020
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 12
+  },
+  {
+   "sku": "AU-C-7322G-RM-SOVERE-1",
+   "slug": "gold-sovereign-coin",
+   "name": "Gold Sovereign Coin",
+   "metal": "XAU",
+   "form": "coin",
+   "brand": "The Royal Mint",
+   "category": "gold-coins",
+   "design": "Sovereign",
+   "year": 2027,
+   "grossWeightMgPerUnit": 7988,
+   "fineness": 9167,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 7323,
+   "diameterMm": 22.05,
+   "ukLegalTender": true,
+   "tags": [
+    "best-seller"
+   ],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 600
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 570
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 540
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 500
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 460
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 420
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 60
+  },
+  {
+   "sku": "AU-C-7322G-RM-P25-SOVERE",
+   "slug": "gold-sovereign-coin-tube-of-25",
+   "name": "Gold Sovereign Coin - Tube of 25",
+   "metal": "XAU",
+   "form": "coin",
+   "brand": "The Royal Mint",
+   "category": "gold-coins",
+   "design": "Sovereign",
+   "year": 2027,
+   "grossWeightMgPerUnit": 7988,
+   "fineness": 9167,
+   "packQuantity": 25,
+   "fineWeightMgPerPack": 183075,
+   "diameterMm": 22.05,
+   "ukLegalTender": true,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 520
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 490
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 460
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 420
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 380
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 340
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 2
+  },
+  {
+   "sku": "AU-C-3661G-RM-SOVERE",
+   "slug": "gold-half-sovereign-coin",
+   "name": "Gold Half Sovereign Coin",
+   "metal": "XAU",
+   "form": "coin",
+   "brand": "The Royal Mint",
+   "category": "gold-coins",
+   "design": "Sovereign",
+   "year": 2027,
+   "grossWeightMgPerUnit": 3994,
+   "fineness": 9167,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 3661,
+   "diameterMm": 19.3,
+   "ukLegalTender": true,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 900
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 870
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 840
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 800
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 760
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 720
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 25
+  },
+  {
+   "sku": "AU-C-7322G-RM-SOVERE-2",
+   "slug": "pre-owned-gold-sovereign-coin-mixed-dates",
+   "name": "Pre-Owned Gold Sovereign Coin - Mixed Dates",
+   "metal": "XAU",
+   "form": "coin",
+   "brand": "The Royal Mint",
+   "category": "gold-coins",
+   "design": "Sovereign",
+   "year": null,
+   "grossWeightMgPerUnit": 7988,
+   "fineness": 9167,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 7323,
+   "diameterMm": 22.05,
+   "ukLegalTender": true,
+   "tags": [
+    "pre-owned"
+   ],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 400
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 370
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 340
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 300
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 260
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 220
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 30
+  },
+  {
+   "sku": "AU-C-1OZ-RM-BRITAN-2",
+   "slug": "pre-owned-gold-britannia-1oz-coin-mixed-dates",
+   "name": "Pre-Owned Gold Britannia 1oz Coin - Mixed Dates",
+   "metal": "XAU",
+   "form": "coin",
+   "brand": "The Royal Mint",
+   "category": "gold-coins",
+   "design": "Britannia",
+   "year": null,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31100,
+   "diameterMm": 32.69,
+   "ukLegalTender": true,
+   "tags": [
+    "pre-owned"
+   ],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 300
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 270
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 240
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 200
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 160
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 120
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 10
+  },
+  {
+   "sku": "AU-C-1OZ-RM-THEROY",
+   "slug": "the-royal-arms-1oz-gold-coin",
+   "name": "The Royal Arms 1oz Gold Coin",
+   "metal": "XAU",
+   "form": "coin",
+   "brand": "The Royal Mint",
+   "category": "gold-coins",
+   "design": "The Royal Arms",
+   "year": 2026,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31100,
+   "diameterMm": null,
+   "ukLegalTender": true,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 500
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 470
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 440
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 400
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 360
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 320
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 4
+  },
+  {
+   "sku": "AU-C-1OZ-RM-THEBRI",
+   "slug": "the-british-lion-1oz-gold-coin",
+   "name": "The British Lion 1oz Gold Coin",
+   "metal": "XAU",
+   "form": "coin",
+   "brand": "The Royal Mint",
+   "category": "gold-coins",
+   "design": "The British Lion",
+   "year": 2026,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31100,
+   "diameterMm": null,
+   "ukLegalTender": true,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 500
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 470
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 440
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 400
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 360
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 320
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 4
+  },
+  {
+   "sku": "AU-C-1OZ-RM-STGEOR",
+   "slug": "st-george-and-the-dragon-1oz-gold-coin",
+   "name": "St George and the Dragon 1oz Gold Coin",
+   "metal": "XAU",
+   "form": "coin",
+   "brand": "The Royal Mint",
+   "category": "gold-coins",
+   "design": "St George and the Dragon",
+   "year": 2026,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31100,
+   "diameterMm": null,
+   "ukLegalTender": true,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 500
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 470
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 440
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 400
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 360
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 320
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 4
+  },
+  {
+   "sku": "AU-C-14OZ-RM-TUDORB",
+   "slug": "tudor-beasts-1-4oz-gold-coin",
+   "name": "Tudor Beasts 1/4oz Gold Coin",
+   "metal": "XAU",
+   "form": "coin",
+   "brand": "The Royal Mint",
+   "category": "gold-coins",
+   "design": "Tudor Beasts",
+   "year": null,
+   "grossWeightMgPerUnit": 7776,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 7775,
+   "diameterMm": null,
+   "ukLegalTender": true,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 850
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 820
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 790
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 750
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 710
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 670
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 6
+  },
+  {
+   "sku": "AU-C-1OZ-SAM-KRUGER",
+   "slug": "krugerrand-1oz-gold-coin",
+   "name": "Krugerrand 1oz Gold Coin",
+   "metal": "XAU",
+   "form": "coin",
+   "brand": "South African Mint",
+   "category": "gold-coins",
+   "design": "Krugerrand",
+   "year": null,
+   "grossWeightMgPerUnit": 33929,
+   "fineness": 9167,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31103,
+   "diameterMm": 32.77,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 400
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 370
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 340
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 300
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 260
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 220
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 12
+  },
+  {
+   "sku": "AU-C-1OZ-RCM-MAPLE",
+   "slug": "maple-leaf-1oz-gold-coin",
+   "name": "Maple Leaf 1oz Gold Coin",
+   "metal": "XAU",
+   "form": "coin",
+   "brand": "Royal Canadian Mint",
+   "category": "gold-coins",
+   "design": "Maple",
+   "year": null,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31100,
+   "diameterMm": 30.0,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 450
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 420
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 390
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 350
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 310
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 270
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 8
+  },
+  {
+   "sku": "AU-C-1OZ-AM-PHILHA",
+   "slug": "philharmonic-1oz-gold-coin",
+   "name": "Philharmonic 1oz Gold Coin",
+   "metal": "XAU",
+   "form": "coin",
+   "brand": "Austrian Mint",
+   "category": "gold-coins",
+   "design": "Philharmonic",
+   "year": null,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31100,
+   "diameterMm": 37.0,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 450
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 420
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 390
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 350
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 310
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 270
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 8
+  },
+  {
+   "sku": "AU-C-1OZ-USM-EAGLE",
+   "slug": "american-eagle-1oz-gold-coin",
+   "name": "American Eagle 1oz Gold Coin",
+   "metal": "XAU",
+   "form": "coin",
+   "brand": "US Mint",
+   "category": "gold-coins",
+   "design": "Eagle",
+   "year": null,
+   "grossWeightMgPerUnit": 33929,
+   "fineness": 9167,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31103,
+   "diameterMm": 32.7,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 600
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 570
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 540
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 500
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 460
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 420
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 5
+  },
+  {
+   "sku": "AU-C-1OZ-PM-KANGAR",
+   "slug": "kangaroo-1oz-gold-coin",
+   "name": "Kangaroo 1oz Gold Coin",
+   "metal": "XAU",
+   "form": "coin",
+   "brand": "Perth Mint",
+   "category": "gold-coins",
+   "design": "Kangaroo",
+   "year": null,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31100,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 450
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 420
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 390
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 350
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 310
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 270
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 6
+  },
+  {
+   "sku": "AU-C-30G-CCM-PANDA",
+   "slug": "panda-30g-gold-coin",
+   "name": "Panda 30g Gold Coin",
+   "metal": "XAU",
+   "form": "coin",
+   "brand": "Central China Mint",
+   "category": "gold-coins",
+   "design": "Panda",
+   "year": null,
+   "grossWeightMgPerUnit": 30000,
+   "fineness": 9990,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 29970,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 800
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 770
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 740
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 700
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 660
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 620
+    }
+   ],
+   "buybackDiscountBps": 200,
+   "initialStock": 3
+  },
+  {
+   "sku": "AG-C-1OZ-RM-BRITAN",
+   "slug": "silver-britannia-1oz-coin",
+   "name": "Silver Britannia 1oz Coin",
+   "metal": "XAG",
+   "form": "coin",
+   "brand": "The Royal Mint",
+   "category": "silver-coins",
+   "design": "Britannia",
+   "year": 2027,
+   "grossWeightMgPerUnit": 31210,
+   "fineness": 9990,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31179,
+   "diameterMm": 38.61,
+   "ukLegalTender": true,
+   "tags": [
+    "best-seller",
+    "new-release"
+   ],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 3000
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 2970
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 2940
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 2900
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 2860
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 2820
+    }
+   ],
+   "buybackDiscountBps": 1000,
+   "initialStock": 500
+  },
+  {
+   "sku": "AG-C-1OZ-RM-P25-BRITAN",
+   "slug": "silver-britannia-1oz-coin-tube-of-25",
+   "name": "Silver Britannia 1oz Coin - Tube of 25",
+   "metal": "XAG",
+   "form": "coin",
+   "brand": "The Royal Mint",
+   "category": "silver-coins",
+   "design": "Britannia",
+   "year": 2027,
+   "grossWeightMgPerUnit": 31210,
+   "fineness": 9990,
+   "packQuantity": 25,
+   "fineWeightMgPerPack": 779475,
+   "diameterMm": 38.61,
+   "ukLegalTender": true,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 2600
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 2570
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 2540
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 2500
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 2460
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 2420
+    }
+   ],
+   "buybackDiscountBps": 1000,
+   "initialStock": 20
+  },
+  {
+   "sku": "AG-C-1OZ-RM-P100-BRITAN",
+   "slug": "silver-britannia-1oz-coin-mini-box-of-100",
+   "name": "Silver Britannia 1oz Coin - Mini Box of 100",
+   "metal": "XAG",
+   "form": "coin",
+   "brand": "The Royal Mint",
+   "category": "silver-coins",
+   "design": "Britannia",
+   "year": 2027,
+   "grossWeightMgPerUnit": 31210,
+   "fineness": 9990,
+   "packQuantity": 100,
+   "fineWeightMgPerPack": 3117900,
+   "diameterMm": 38.61,
+   "ukLegalTender": true,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 2400
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 2370
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 2340
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 2300
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 2260
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 2220
+    }
+   ],
+   "buybackDiscountBps": 1000,
+   "initialStock": 4
+  },
+  {
+   "sku": "AG-C-1OZ-RM-P500-BRITAN",
+   "slug": "silver-britannia-1oz-coin-monster-box-of-500",
+   "name": "Silver Britannia 1oz Coin - Monster Box of 500",
+   "metal": "XAG",
+   "form": "coin",
+   "brand": "The Royal Mint",
+   "category": "silver-coins",
+   "design": "Britannia",
+   "year": 2027,
+   "grossWeightMgPerUnit": 31210,
+   "fineness": 9990,
+   "packQuantity": 500,
+   "fineWeightMgPerPack": 15589500,
+   "diameterMm": 38.61,
+   "ukLegalTender": true,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 2200
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 2170
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 2140
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 2100
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 2060
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 2020
+    }
+   ],
+   "buybackDiscountBps": 1000,
+   "initialStock": 1
+  },
+  {
+   "sku": "AG-C-14OZ-RM-BRITAN",
+   "slug": "silver-britannia-1-4oz-coin",
+   "name": "Silver Britannia 1/4oz Coin",
+   "metal": "XAG",
+   "form": "coin",
+   "brand": "The Royal Mint",
+   "category": "silver-coins",
+   "design": "Britannia",
+   "year": 2027,
+   "grossWeightMgPerUnit": 7776,
+   "fineness": 9990,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 7768,
+   "diameterMm": null,
+   "ukLegalTender": true,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 5000
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 4970
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 4940
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 4900
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 4860
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 4820
+    }
+   ],
+   "buybackDiscountBps": 1000,
+   "initialStock": 40
+  },
+  {
+   "sku": "AG-C-110OZ-RM-BRITAN",
+   "slug": "silver-britannia-1-10oz-coin",
+   "name": "Silver Britannia 1/10oz Coin",
+   "metal": "XAG",
+   "form": "coin",
+   "brand": "The Royal Mint",
+   "category": "silver-coins",
+   "design": "Britannia",
+   "year": 2027,
+   "grossWeightMgPerUnit": 3110,
+   "fineness": 9990,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 3107,
+   "diameterMm": null,
+   "ukLegalTender": true,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 7000
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 6970
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 6940
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 6900
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 6860
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 6820
+    }
+   ],
+   "buybackDiscountBps": 1000,
+   "initialStock": 60
+  },
+  {
+   "sku": "AG-C-2OZ-RM-TUDORB",
+   "slug": "tudor-beasts-2oz-silver-coin",
+   "name": "Tudor Beasts 2oz Silver Coin",
+   "metal": "XAG",
+   "form": "coin",
+   "brand": "The Royal Mint",
+   "category": "silver-coins",
+   "design": "Tudor Beasts",
+   "year": null,
+   "grossWeightMgPerUnit": 62207,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 62201,
+   "diameterMm": null,
+   "ukLegalTender": true,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 3500
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 3470
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 3440
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 3400
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 3360
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 3320
+    }
+   ],
+   "buybackDiscountBps": 1000,
+   "initialStock": 25
+  },
+  {
+   "sku": "AG-C-1OZ-RM-THEBRI",
+   "slug": "the-british-lion-1oz-silver-coin",
+   "name": "The British Lion 1oz Silver Coin",
+   "metal": "XAG",
+   "form": "coin",
+   "brand": "The Royal Mint",
+   "category": "silver-coins",
+   "design": "The British Lion",
+   "year": null,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31100,
+   "diameterMm": null,
+   "ukLegalTender": true,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 3500
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 3470
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 3440
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 3400
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 3360
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 3320
+    }
+   ],
+   "buybackDiscountBps": 1000,
+   "initialStock": 25
+  },
+  {
+   "sku": "AG-C-1OZ-RM-THEROY",
+   "slug": "the-royal-arms-1oz-silver-coin",
+   "name": "The Royal Arms 1oz Silver Coin",
+   "metal": "XAG",
+   "form": "coin",
+   "brand": "The Royal Mint",
+   "category": "silver-coins",
+   "design": "The Royal Arms",
+   "year": null,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31100,
+   "diameterMm": null,
+   "ukLegalTender": true,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 3500
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 3470
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 3440
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 3400
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 3360
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 3320
+    }
+   ],
+   "buybackDiscountBps": 1000,
+   "initialStock": 25
+  },
+  {
+   "sku": "AG-C-1OZ-RCM-MAPLE",
+   "slug": "maple-leaf-1oz-silver-coin",
+   "name": "Maple Leaf 1oz Silver Coin",
+   "metal": "XAG",
+   "form": "coin",
+   "brand": "Royal Canadian Mint",
+   "category": "silver-coins",
+   "design": "Maple",
+   "year": null,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31100,
+   "diameterMm": 38.0,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 2800
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 2770
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 2740
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 2700
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 2660
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 2620
+    }
+   ],
+   "buybackDiscountBps": 1000,
+   "initialStock": 200
+  },
+  {
+   "sku": "AG-C-1OZ-PM-KANGAR",
+   "slug": "kangaroo-1oz-silver-coin",
+   "name": "Kangaroo 1oz Silver Coin",
+   "metal": "XAG",
+   "form": "coin",
+   "brand": "Perth Mint",
+   "category": "silver-coins",
+   "design": "Kangaroo",
+   "year": null,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31100,
+   "diameterMm": 40.6,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 2700
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 2670
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 2640
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 2600
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 2560
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 2520
+    }
+   ],
+   "buybackDiscountBps": 1000,
+   "initialStock": 200
+  },
+  {
+   "sku": "AG-C-1OZ-AM-PHILHA",
+   "slug": "philharmonic-1oz-silver-coin",
+   "name": "Philharmonic 1oz Silver Coin",
+   "metal": "XAG",
+   "form": "coin",
+   "brand": "Austrian Mint",
+   "category": "silver-coins",
+   "design": "Philharmonic",
+   "year": null,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9990,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31072,
+   "diameterMm": 37.0,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 2800
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 2770
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 2740
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 2700
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 2660
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 2620
+    }
+   ],
+   "buybackDiscountBps": 1000,
+   "initialStock": 150
+  },
+  {
+   "sku": "AG-C-1OZ-USM-EAGLE",
+   "slug": "american-eagle-1oz-silver-coin",
+   "name": "American Eagle 1oz Silver Coin",
+   "metal": "XAG",
+   "form": "coin",
+   "brand": "US Mint",
+   "category": "silver-coins",
+   "design": "Eagle",
+   "year": null,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9990,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31072,
+   "diameterMm": 40.6,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 3500
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 3470
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 3440
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 3400
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 3360
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 3320
+    }
+   ],
+   "buybackDiscountBps": 1000,
+   "initialStock": 100
+  },
+  {
+   "sku": "AG-C-1OZ-SAM-KRUGER",
+   "slug": "krugerrand-1oz-silver-coin",
+   "name": "Krugerrand 1oz Silver Coin",
+   "metal": "XAG",
+   "form": "coin",
+   "brand": "South African Mint",
+   "category": "silver-coins",
+   "design": "Krugerrand",
+   "year": null,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9990,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31072,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 2800
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 2770
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 2740
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 2700
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 2660
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 2620
+    }
+   ],
+   "buybackDiscountBps": 1000,
+   "initialStock": 80
+  },
+  {
+   "sku": "AG-C-1OZ-PM-KOOKAB",
+   "slug": "kookaburra-1oz-silver-coin",
+   "name": "Kookaburra 1oz Silver Coin",
+   "metal": "XAG",
+   "form": "coin",
+   "brand": "Perth Mint",
+   "category": "silver-coins",
+   "design": "Kookaburra",
+   "year": null,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9999,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31100,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 3000
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 2970
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 2940
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 2900
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 2860
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 2820
+    }
+   ],
+   "buybackDiscountBps": 1000,
+   "initialStock": 60
+  },
+  {
+   "sku": "AG-B-1OZ-RM",
+   "slug": "the-royal-mint-britannia-1oz-silver-bar",
+   "name": "The Royal Mint Britannia 1oz Silver Bar",
+   "metal": "XAG",
+   "form": "bar",
+   "brand": "The Royal Mint",
+   "category": "silver-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9990,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31072,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 3200
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 3170
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 3140
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 3100
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 3060
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 3020
+    }
+   ],
+   "buybackDiscountBps": 1000,
+   "initialStock": 100
+  },
+  {
+   "sku": "AG-B-100G-RM",
+   "slug": "the-royal-mint-britannia-100g-silver-bar",
+   "name": "The Royal Mint Britannia 100g Silver Bar",
+   "metal": "XAG",
+   "form": "bar",
+   "brand": "The Royal Mint",
+   "category": "silver-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 100000,
+   "fineness": 9990,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 99900,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 2000
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 1970
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 1940
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 1900
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 1860
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 1820
+    }
+   ],
+   "buybackDiscountBps": 1000,
+   "initialStock": 40
+  },
+  {
+   "sku": "AG-B-100G-MET",
+   "slug": "metalor-100g-silver-bar",
+   "name": "Metalor 100g Silver Bar",
+   "metal": "XAG",
+   "form": "bar",
+   "brand": "Metalor",
+   "category": "silver-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 100000,
+   "fineness": 9990,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 99900,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 1800
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 1770
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 1740
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 1700
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 1660
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 1620
+    }
+   ],
+   "buybackDiscountBps": 1000,
+   "initialStock": 25
+  },
+  {
+   "sku": "AG-B-250G-MET",
+   "slug": "metalor-250g-silver-bar",
+   "name": "Metalor 250g Silver Bar",
+   "metal": "XAG",
+   "form": "bar",
+   "brand": "Metalor",
+   "category": "silver-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 250000,
+   "fineness": 9990,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 249750,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 1500
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 1470
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 1440
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 1400
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 1360
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 1320
+    }
+   ],
+   "buybackDiscountBps": 1000,
+   "initialStock": 25
+  },
+  {
+   "sku": "AG-B-500G-MET",
+   "slug": "metalor-500g-silver-bar",
+   "name": "Metalor 500g Silver Bar",
+   "metal": "XAG",
+   "form": "bar",
+   "brand": "Metalor",
+   "category": "silver-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 500000,
+   "fineness": 9990,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 499500,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 1300
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 1270
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 1240
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 1200
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 1160
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 1120
+    }
+   ],
+   "buybackDiscountBps": 1000,
+   "initialStock": 25
+  },
+  {
+   "sku": "AG-B-1KG-MET",
+   "slug": "metalor-1kg-silver-bar",
+   "name": "Metalor 1kg Silver Bar",
+   "metal": "XAG",
+   "form": "bar",
+   "brand": "Metalor",
+   "category": "silver-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 1000000,
+   "fineness": 9990,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 999000,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 1150
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 1120
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 1090
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 1050
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 1010
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 970
+    }
+   ],
+   "buybackDiscountBps": 1000,
+   "initialStock": 15
+  },
+  {
+   "sku": "AG-B-1KG-VAL",
+   "slug": "valcambi-1kg-silver-cast-bar",
+   "name": "Valcambi 1kg Silver Cast Bar",
+   "metal": "XAG",
+   "form": "bar",
+   "brand": "Valcambi",
+   "category": "silver-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 1000000,
+   "fineness": 9990,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 999000,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 1100
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 1070
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 1040
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 1000
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 960
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 920
+    }
+   ],
+   "buybackDiscountBps": 1000,
+   "initialStock": 10
+  },
+  {
+   "sku": "AG-B-100G-VAL-COMBIB",
+   "slug": "valcambi-100-x-1g-silver-combibar",
+   "name": "Valcambi 100 x 1g Silver CombiBar",
+   "metal": "XAG",
+   "form": "bar",
+   "brand": "Valcambi",
+   "category": "silver-bars",
+   "design": "CombiBar",
+   "year": null,
+   "grossWeightMgPerUnit": 100000,
+   "fineness": 9990,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 99900,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 3500
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 3470
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 3440
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 3400
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 3360
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 3320
+    }
+   ],
+   "buybackDiscountBps": 1000,
+   "initialStock": 6
+  },
+  {
+   "sku": "AG-B-10OZ-SDM",
+   "slug": "scottsdale-mint-10oz-stacker-silver-bar",
+   "name": "Scottsdale Mint 10oz Stacker Silver Bar",
+   "metal": "XAG",
+   "form": "bar",
+   "brand": "Scottsdale Mint",
+   "category": "silver-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 311035,
+   "fineness": 9990,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 310724,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 1500
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 1470
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 1440
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 1400
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 1360
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 1320
+    }
+   ],
+   "buybackDiscountBps": 1000,
+   "initialStock": 12
+  },
+  {
+   "sku": "AG-B-1KG-SDM",
+   "slug": "scottsdale-mint-1kg-stacker-silver-bar",
+   "name": "Scottsdale Mint 1kg Stacker Silver Bar",
+   "metal": "XAG",
+   "form": "bar",
+   "brand": "Scottsdale Mint",
+   "category": "silver-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 1000000,
+   "fineness": 9990,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 999000,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 1200
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 1170
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 1140
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 1100
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 1060
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 1020
+    }
+   ],
+   "buybackDiscountBps": 1000,
+   "initialStock": 6
+  },
+  {
+   "sku": "AG-B-1OZ-PAMP-FORTUN",
+   "slug": "pamp-suisse-fortuna-1oz-silver-bar",
+   "name": "PAMP Suisse Fortuna 1oz Silver Bar",
+   "metal": "XAG",
+   "form": "bar",
+   "brand": "PAMP Suisse",
+   "category": "silver-bars",
+   "design": "Fortuna",
+   "year": null,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9990,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31072,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 3600
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 3570
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 3540
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 3500
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 3460
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 3420
+    }
+   ],
+   "buybackDiscountBps": 1000,
+   "initialStock": 50
+  },
+  {
+   "sku": "AG-B-1KG-PM",
+   "slug": "perth-mint-1kg-silver-cast-bar",
+   "name": "Perth Mint 1kg Silver Cast Bar",
+   "metal": "XAG",
+   "form": "bar",
+   "brand": "Perth Mint",
+   "category": "silver-bars",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 1000000,
+   "fineness": 9990,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 999000,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 1150
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 1120
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 1090
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 1050
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 1010
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 970
+    }
+   ],
+   "buybackDiscountBps": 1000,
+   "initialStock": 0
+  },
+  {
+   "sku": "PT-C-1OZ-RM-BRITAN",
+   "slug": "platinum-britannia-1oz-coin",
+   "name": "Platinum Britannia 1oz Coin",
+   "metal": "XPT",
+   "form": "coin",
+   "brand": "The Royal Mint",
+   "category": "platinum",
+   "design": "Britannia",
+   "year": null,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9995,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31087,
+   "diameterMm": 32.69,
+   "ukLegalTender": true,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 700
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 670
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 640
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 600
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 560
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 520
+    }
+   ],
+   "buybackDiscountBps": 800,
+   "initialStock": 6
+  },
+  {
+   "sku": "PT-C-110OZ-RM-BRITAN",
+   "slug": "platinum-britannia-1-10oz-coin",
+   "name": "Platinum Britannia 1/10oz Coin",
+   "metal": "XPT",
+   "form": "coin",
+   "brand": "The Royal Mint",
+   "category": "platinum",
+   "design": "Britannia",
+   "year": null,
+   "grossWeightMgPerUnit": 3110,
+   "fineness": 9995,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 3108,
+   "diameterMm": null,
+   "ukLegalTender": true,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 1600
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 1570
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 1540
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 1500
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 1460
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 1420
+    }
+   ],
+   "buybackDiscountBps": 800,
+   "initialStock": 10
+  },
+  {
+   "sku": "PT-C-1OZ-RCM-MAPLE",
+   "slug": "platinum-maple-leaf-1oz-coin",
+   "name": "Platinum Maple Leaf 1oz Coin",
+   "metal": "XPT",
+   "form": "coin",
+   "brand": "Royal Canadian Mint",
+   "category": "platinum",
+   "design": "Maple",
+   "year": null,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9995,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31087,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 800
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 770
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 740
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 700
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 660
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 620
+    }
+   ],
+   "buybackDiscountBps": 800,
+   "initialStock": 0
+  },
+  {
+   "sku": "PT-B-1G-GEN",
+   "slug": "1g-platinum-bar",
+   "name": "1g Platinum Bar",
+   "metal": "XPT",
+   "form": "bar",
+   "brand": "Unbranded",
+   "category": "platinum",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 1000,
+   "fineness": 9995,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 1000,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 3500
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 3470
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 3440
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 3400
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 3360
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 3320
+    }
+   ],
+   "buybackDiscountBps": 800,
+   "initialStock": 5
+  },
+  {
+   "sku": "PT-B-5G-GEN",
+   "slug": "5g-platinum-bar",
+   "name": "5g Platinum Bar",
+   "metal": "XPT",
+   "form": "bar",
+   "brand": "Unbranded",
+   "category": "platinum",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 5000,
+   "fineness": 9995,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 4998,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 1500
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 1470
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 1440
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 1400
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 1360
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 1320
+    }
+   ],
+   "buybackDiscountBps": 800,
+   "initialStock": 5
+  },
+  {
+   "sku": "PT-B-20G-GEN",
+   "slug": "20g-platinum-bar",
+   "name": "20g Platinum Bar",
+   "metal": "XPT",
+   "form": "bar",
+   "brand": "Unbranded",
+   "category": "platinum",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 20000,
+   "fineness": 9995,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 19990,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 900
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 870
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 840
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 800
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 760
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 720
+    }
+   ],
+   "buybackDiscountBps": 800,
+   "initialStock": 5
+  },
+  {
+   "sku": "PT-B-1OZ-GEN",
+   "slug": "1oz-platinum-bar",
+   "name": "1oz Platinum Bar",
+   "metal": "XPT",
+   "form": "bar",
+   "brand": "Unbranded",
+   "category": "platinum",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9995,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31087,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 650
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 620
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 590
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 550
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 510
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 470
+    }
+   ],
+   "buybackDiscountBps": 800,
+   "initialStock": 5
+  },
+  {
+   "sku": "PT-B-50G-GEN",
+   "slug": "50g-platinum-bar",
+   "name": "50g Platinum Bar",
+   "metal": "XPT",
+   "form": "bar",
+   "brand": "Unbranded",
+   "category": "platinum",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 50000,
+   "fineness": 9995,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 49975,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 600
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 570
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 540
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 500
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 460
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 420
+    }
+   ],
+   "buybackDiscountBps": 800,
+   "initialStock": 5
+  },
+  {
+   "sku": "PT-B-100G-GEN",
+   "slug": "100g-platinum-bar",
+   "name": "100g Platinum Bar",
+   "metal": "XPT",
+   "form": "bar",
+   "brand": "Unbranded",
+   "category": "platinum",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 100000,
+   "fineness": 9995,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 99950,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 550
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 520
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 490
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 450
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 410
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 370
+    }
+   ],
+   "buybackDiscountBps": 800,
+   "initialStock": 2
+  },
+  {
+   "sku": "PD-B-1G-PAMP",
+   "slug": "pamp-suisse-1g-palladium-bar",
+   "name": "PAMP Suisse 1g Palladium Bar",
+   "metal": "XPD",
+   "form": "bar",
+   "brand": "PAMP Suisse",
+   "category": "palladium",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 1000,
+   "fineness": 9995,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 1000,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 4000
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 3970
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 3940
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 3900
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 3860
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 3820
+    }
+   ],
+   "buybackDiscountBps": 800,
+   "initialStock": 4
+  },
+  {
+   "sku": "PD-B-5G-PAMP",
+   "slug": "pamp-suisse-5g-palladium-bar",
+   "name": "PAMP Suisse 5g Palladium Bar",
+   "metal": "XPD",
+   "form": "bar",
+   "brand": "PAMP Suisse",
+   "category": "palladium",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 5000,
+   "fineness": 9995,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 4998,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 1800
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 1770
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 1740
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 1700
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 1660
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 1620
+    }
+   ],
+   "buybackDiscountBps": 800,
+   "initialStock": 0
+  },
+  {
+   "sku": "PD-B-10G-PAMP",
+   "slug": "pamp-suisse-10g-palladium-bar",
+   "name": "PAMP Suisse 10g Palladium Bar",
+   "metal": "XPD",
+   "form": "bar",
+   "brand": "PAMP Suisse",
+   "category": "palladium",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 10000,
+   "fineness": 9995,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 9995,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 1300
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 1270
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 1240
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 1200
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 1160
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 1120
+    }
+   ],
+   "buybackDiscountBps": 800,
+   "initialStock": 0
+  },
+  {
+   "sku": "PD-B-20G-PAMP",
+   "slug": "pamp-suisse-20g-palladium-bar",
+   "name": "PAMP Suisse 20g Palladium Bar",
+   "metal": "XPD",
+   "form": "bar",
+   "brand": "PAMP Suisse",
+   "category": "palladium",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 20000,
+   "fineness": 9995,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 19990,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 1000
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 970
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 940
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 900
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 860
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 820
+    }
+   ],
+   "buybackDiscountBps": 800,
+   "initialStock": 4
+  },
+  {
+   "sku": "PD-B-12OZ-PAMP",
+   "slug": "pamp-suisse-1-2oz-palladium-bar",
+   "name": "PAMP Suisse 1/2oz Palladium Bar",
+   "metal": "XPD",
+   "form": "bar",
+   "brand": "PAMP Suisse",
+   "category": "palladium",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 15552,
+   "fineness": 9995,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 15544,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 900
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 870
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 840
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 800
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 760
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 720
+    }
+   ],
+   "buybackDiscountBps": 800,
+   "initialStock": 4
+  },
+  {
+   "sku": "PD-B-1OZ-PAMP",
+   "slug": "pamp-suisse-1oz-palladium-bar",
+   "name": "PAMP Suisse 1oz Palladium Bar",
+   "metal": "XPD",
+   "form": "bar",
+   "brand": "PAMP Suisse",
+   "category": "palladium",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 31103,
+   "fineness": 9995,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 31087,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 700
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 670
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 640
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 600
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 560
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 520
+    }
+   ],
+   "buybackDiscountBps": 800,
+   "initialStock": 4
+  },
+  {
+   "sku": "PD-B-50G-PAMP",
+   "slug": "pamp-suisse-50g-palladium-bar",
+   "name": "PAMP Suisse 50g Palladium Bar",
+   "metal": "XPD",
+   "form": "bar",
+   "brand": "PAMP Suisse",
+   "category": "palladium",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 50000,
+   "fineness": 9995,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 49975,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 650
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 620
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 590
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 550
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 510
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 470
+    }
+   ],
+   "buybackDiscountBps": 800,
+   "initialStock": 4
+  },
+  {
+   "sku": "PD-B-100G-PAMP",
+   "slug": "pamp-suisse-100g-palladium-bar",
+   "name": "PAMP Suisse 100g Palladium Bar",
+   "metal": "XPD",
+   "form": "bar",
+   "brand": "PAMP Suisse",
+   "category": "palladium",
+   "design": null,
+   "year": null,
+   "grossWeightMgPerUnit": 100000,
+   "fineness": 9995,
+   "packQuantity": 1,
+   "fineWeightMgPerPack": 99950,
+   "diameterMm": null,
+   "ukLegalTender": false,
+   "tags": [],
+   "tiers": [
+    {
+     "minQuantity": 1,
+     "premiumBps": 600
+    },
+    {
+     "minQuantity": 2,
+     "premiumBps": 570
+    },
+    {
+     "minQuantity": 5,
+     "premiumBps": 540
+    },
+    {
+     "minQuantity": 10,
+     "premiumBps": 500
+    },
+    {
+     "minQuantity": 25,
+     "premiumBps": 460
+    },
+    {
+     "minQuantity": 100,
+     "premiumBps": 420
+    }
+   ],
+   "buybackDiscountBps": 800,
+   "initialStock": 2
+  }
+ ]
+}
