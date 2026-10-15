@@ -1,3 +1,11 @@
+export type Metal = "XAU" | "XAG" | "XPT" | "XPD";
+export const METALS: Metal[] = ["XAU", "XAG", "XPT", "XPD"];
+export const METAL_NAMES: Record<Metal, string> = {
+  XAU: "Gold",
+  XAG: "Silver",
+  XPT: "Platinum",
+  XPD: "Palladium",
+};
 export interface DealerUser {
   id: string;
   email: string;
@@ -42,6 +50,10 @@ export interface PriceSnapshot {
   providerAt: string;
   fetchedAt: string;
 }
+export interface MarketState extends PriceState {
+  dayOpen: { pricePerOunceGBP: string; providerAt: string } | null;
+  firstObservedAt: string | null;
+}
 export interface PriceState {
   marketClosed?: boolean;
   quotePauseReason?: string | null;
@@ -55,6 +67,7 @@ export type PriceRange =
   | "6h"
   | "1d"
   | "7d"
+  | "1m"
   | "3m"
   | "6m"
   | "1y"
