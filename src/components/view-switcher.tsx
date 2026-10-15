@@ -22,11 +22,11 @@ export default function ViewSwitcher() {
  return <aside className="view-switcher" aria-label="Demo view controls">
   <div className="view-switcher-inner"><span className="view-context"><span className="view-demo-label">PORTFOLIO DEMO</span><strong>{current}</strong></span>
   <details ref={panel} onKeyDown={e=>{if(e.key==='Escape'){panel.current!.open=false;panel.current?.querySelector('summary')?.focus();}}}>
-   <summary>Switch view <span aria-hidden="true">âŒ„</span></summary>
+   <summary>Switch view <span aria-hidden="true">⌄</span></summary>
    <div className="view-options"><p>Explore both sides of the business</p>
     <a href="/store" aria-current={current==='Customer store'?'page':undefined}><strong>Customer store</strong><span>Browse metals, prices and your basket</span></a>
     <a href="/account"><strong>Customer account</strong><span>Your fictional orders and holdings</span></a>
-    <button disabled={busy} onClick={()=>void owner('/admin')}><strong>{busy?'Openingâ€¦':'Owner demo · Admin'}</strong><span>Manage orders, stock, pricing and profit</span></button>
+    <button disabled={busy} onClick={()=>void owner('/admin')}><strong>{busy?'Opening...':'Owner demo · Admin'}</strong><span>Manage orders, stock, pricing and profit</span></button>
     <button disabled={busy} onClick={()=>void owner('/desk')}><strong>Dealer desk</strong><span>Create quotes and manage reservations</span></button>
     <small>Demo access only. Switching views does not place an order.</small>
     {error&&<p role="alert">{error}</p>}
