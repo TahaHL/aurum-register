@@ -10,7 +10,7 @@ for (const action of ["sold", "released"] as const) {
       width: action === "sold" ? 1440 : 390,
       height: 1000,
     });
-    await page.goto("/");
+    await page.goto("/desk");
     await page.getByRole("button", { name: /Enter as owner/ }).click();
     const reference = `Outcome ${action} ${Date.now()}`;
     await page.getByRole("button", { name: "New quote", exact: true }).click();

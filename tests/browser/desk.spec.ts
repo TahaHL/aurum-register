@@ -5,9 +5,9 @@ for (const width of [390, 768, 1440])
     page,
   }, info) => {
     await page.setViewportSize({ width, height: 1000 });
-    await page.goto("/");
+    await page.goto("/desk");
     await expect(
-      page.getByRole("heading", { name: "Sign in to Aurum Register" }),
+      page.getByRole("heading", { name: "Sign in to Hadj Lakehal Metals" }),
     ).toBeVisible();
     const loginScan = await new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
@@ -49,7 +49,7 @@ test("issue a quote, accept the customer link and observe reserved stock", async
   page,
   context,
 }, info) => {
-  await page.goto("/");
+  await page.goto("/desk");
   await page.getByRole("button", { name: /Enter as owner/ }).click();
   await page.getByRole("button", { name: "New quote", exact: true }).click();
   await page.getByLabel("Customer reference").fill("BROWSER-" + Date.now());
@@ -90,7 +90,7 @@ test("receive a lot, correct its quantity and verify staff permissions", async (
   page,
 }, info) => {
   await page.setViewportSize({ width: 1440, height: 1000 });
-  await page.goto("/");
+  await page.goto("/desk");
   await page.getByRole("button", { name: /Enter as owner/ }).click();
   await page.getByRole("button", { name: "Inventory", exact: true }).click();
   await page
