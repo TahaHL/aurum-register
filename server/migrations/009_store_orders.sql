@@ -1,0 +1,10 @@
+CREATE TABLE customers(id uuid PRIMARY KEY,name text NOT NULL,email text NOT NULL UNIQUE,password_hash text NOT NULL,is_demo boolean NOT NULL DEFAULT true,created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE basket_lines(session_id uuid NOT NULL,product_id uuid NOT NULL REFERENCES products,quantity integer NOT NULL CHECK(quantity BETWEEN 1 AND 1000),PRIMARY KEY(session_id,product_id));
+CREATE TABLE checkout_locks(id uuid PRIMARY KEY,customer_id uuid NOT NULL REFERENCES customers,session_id uuid NOT NULL,lines jsonb NOT NULL,net_pence bigint NOT NULL,vat_pence bigint NOT NULL,total_pence bigint NOT NULL CHECK(total_pence=net_pence+vat_pence),created_at timestamptz NOT NULL DEFAULT now(),expires_at timestamptz NOT NULL);
+CREATE TRIGGER checkout_snapshot_immutable BEFORE UPDATE OR DELETE ON checkout_locks FOR EACH ROW EXECUTE FUNCTION protect_ledger_events();
+CREATE TABLE orders(id uuid PRIMARY KEY,customer_id uuid NOT NULL REFERENCES customers,lock_id uuid NOT NULL UNIQUE REFERENCES checkout_locks,request_id uuid NOT NULL UNIQUE,status text NOT NULL CHECK(status IN ('paid_simulated','dispatched','delivered','cancelled')),net_pence bigint NOT NULL,vat_pence bigint NOT NULL,total_pence bigint NOT NULL CHECK(total_pence=net_pence+vat_pence),created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE order_lines(id uuid PRIMARY KEY,order_id uuid NOT NULL REFERENCES orders,product_id uuid NOT NULL REFERENCES products,quantity integer NOT NULL CHECK(quantity>0),snapshot jsonb NOT NULL);
+CREATE TABLE order_allocations(order_line_id uuid NOT NULL REFERENCES order_lines,lot_id uuid NOT NULL REFERENCES lots,quantity integer NOT NULL CHECK(quantity>0),unit_cost_pence bigint CHECK(unit_cost_pence>=0),PRIMARY KEY(order_line_id,lot_id));
+CREATE TRIGGER order_line_immutable BEFORE UPDATE OR DELETE ON order_lines FOR EACH ROW EXECUTE FUNCTION protect_ledger_events();
+CREATE TRIGGER order_allocation_immutable BEFORE UPDATE OR DELETE ON order_allocations FOR EACH ROW EXECUTE FUNCTION protect_ledger_events();
+CREATE TRIGGER order_snapshot_immutable BEFORE UPDATE ON orders FOR EACH ROW EXECUTE FUNCTION protect_quote_snapshot();
