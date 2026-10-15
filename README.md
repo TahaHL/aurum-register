@@ -1,8 +1,8 @@
-# Hadj Lakehal Metals
+# Bullion Market
 
 A fictional bullion storefront and owner workspace built with **React, TypeScript, Express and PostgreSQL**. Browse 110 products across four metals, lock a price, place a simulated order and follow its stock allocation through the owner's reports.
 
-[CI checks](https://github.com/TahaHL/aurum-register/actions) · [Architecture and decisions](docs/STORE_ARCHITECTURE.md) · [Portfolio case study](docs/CASE_STUDY.md)
+[CI checks](https://github.com/TahaHL/bullion-market/actions) · [Architecture and decisions](docs/STORE_ARCHITECTURE.md) · [Portfolio case study](docs/CASE_STUDY.md)
 
 **[Open the hosted demo](https://aurum-register-demo.onrender.com/)** — the HLM store is deployed on a free Render instance. It may take a minute to wake after inactivity. Use **Switch view** to explore the customer store and owner dashboard.
 
