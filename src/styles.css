@@ -1,6 +1,61 @@
 :root {
   font-synthesis: none;
   font-weight: 400;
+  --font-display: "Geist Variable", system-ui, sans-serif;
+  --font-ui: "Geist Variable", system-ui, sans-serif;
+  --font-num: "Geist Mono Variable", ui-monospace, monospace;
+  --line-dark: #314651;
+  --text-on-ink: #f5f7f8;
+  --text-on-ink-muted: #b5c2cb;
+  --chart-line: #9b7629;
+  --gold-tint: #f7f0df;
+  --silver: #9ca3ab;
+  --up: #1e7b4f;
+  --up-tint: #e3f1e9;
+  --down: #b4342d;
+  --down-tint: #f7e3e1;
+  --stale: #8f5200;
+  --stale-tint: #fff4e0;
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --r-sm: 6px;
+  --r-md: 6px;
+  --r-pill: 5px;
+  --shadow-1: 0 1px 2px #16130e0f, 0 1px 1px #16130e0a;
+  --shadow-2: 0 8px 24px -8px #16130e24, 0 2px 4px #16130e0d;
+  --page-max: 1400px;
+  --t-price: 56px;
+  --t-h1: 36px;
+  --t-h2: 24px;
+  --t-h3: 18px;
+  --t-body: 15px;
+  --t-small: 13px;
+  --t-label: 11px;
+  --t-num: 14px;
+  --green: var(--ink);
+  --border: var(--line);
+  --surface: var(--card);
+  color: var(--text);
+  background: var(--paper);
+  font-family: var(--font-ui);
+  font-size: var(--t-body);
+  line-height: 22px;
+  --paper: #f5f3ed;
+  --card: #fffefa;
+  --ink: #222d27;
+  --ink-2: #243d32;
+  --muted: #62695f;
+  --text-muted: #62695f;
+  --line: #d9d9cd;
+  --gold: #926d2d;
+  --gold-text: #795621;
+  --text: #222d27;
 }
 * {
   box-sizing: border-box;
@@ -1787,53 +1842,6 @@ td small {
     gap: 6px;
   }
 }
-:root {
-  --font-display: "Geist Variable", system-ui, sans-serif;
-  --font-ui: "Geist Variable", system-ui, sans-serif;
-  --font-num: "Geist Mono Variable", ui-monospace, monospace;
-  --line-dark: #314651;
-  --text-on-ink: #f5f7f8;
-  --text-on-ink-muted: #b5c2cb;
-  --chart-line: #9b7629;
-  --gold-tint: #f7f0df;
-  --silver: #9ca3ab;
-  --up: #1e7b4f;
-  --up-tint: #e3f1e9;
-  --down: #b4342d;
-  --down-tint: #f7e3e1;
-  --stale: #8f5200;
-  --stale-tint: #fff4e0;
-  --s-1: 4px;
-  --s-2: 8px;
-  --s-3: 12px;
-  --s-4: 16px;
-  --s-5: 24px;
-  --s-6: 32px;
-  --s-7: 48px;
-  --s-8: 64px;
-  --r-sm: 6px;
-  --r-md: 6px;
-  --r-pill: 5px;
-  --shadow-1: 0 1px 2px #16130e0f, 0 1px 1px #16130e0a;
-  --shadow-2: 0 8px 24px -8px #16130e24, 0 2px 4px #16130e0d;
-  --page-max: 1400px;
-  --t-price: 56px;
-  --t-h1: 36px;
-  --t-h2: 24px;
-  --t-h3: 18px;
-  --t-body: 15px;
-  --t-small: 13px;
-  --t-label: 11px;
-  --t-num: 14px;
-  --green: var(--ink);
-  --border: var(--line);
-  --surface: var(--card);
-  color: var(--text);
-  background: var(--paper);
-  font-family: var(--font-ui);
-  font-size: var(--t-body);
-  line-height: 22px;
-}
 body {
   background: var(--paper);
 }
@@ -1865,6 +1873,8 @@ h3 {
 p {
   line-height: 22px;
 }
+.market-price,
+.stock-book-price strong,
 .num,
 .chart-axis,
 .market-high-low strong,
@@ -4621,17 +4631,6 @@ td {
   }
 }
 /* Dealer counter: one market canvas, a stock book and an on-demand sales slip. */
-:root {
-  --paper: #f5f3ed;
-  --card: #fffefa;
-  --ink: #222d27;
-  --ink-2: #243d32;
-  --muted: #62695f;
-  --text-muted: #62695f;
-  --line: #d9d9cd;
-  --gold: #926d2d;
-  --gold-text: #795621;
-}
 .counter-layout {
   background: var(--paper);
   color: var(--ink);
@@ -4651,7 +4650,6 @@ td {
 .counter-layout .ledger-wordmark {
   color: #fffefa;
   font-weight: 550;
-  font-size: 23px;
   letter-spacing: -1px;
 }
 .counter-layout .brand-edition {
@@ -4759,13 +4757,6 @@ td {
   padding-left: 16px;
   border-left: 1px solid #bbc1b3;
   color: #62695f;
-}
-.counter-heading h1 {
-  font-family: "Source Serif 4 Variable", Georgia, serif;
-  font-weight: 450;
-  font-size: clamp(38px, 4.4vw, 64px);
-  line-height: 1.1;
-  letter-spacing: -2.5px;
 }
 .counter-layout .button.primary {
   background: #243d32;
@@ -5076,7 +5067,7 @@ td {
   border: 0;
 }
 .ticket-drawer .composer h2 {
-  font-family: "Source Serif 4 Variable", Georgia, serif;
+  font-family: var(--font-ui);
   font-size: 36px;
   font-weight: 450;
 }
@@ -5331,9 +5322,6 @@ td {
     padding: 0 20px 32px;
   }
 }
-:root {
-  --text: #222d27;
-}
 .sign-in-shell {
   background: #f5f3ed;
 }
@@ -5346,7 +5334,7 @@ td {
   margin: auto 0;
 }
 .sign-in-intro h1 {
-  font-family: "Source Serif 4 Variable", Georgia, serif;
+  font-family: var(--font-ui);
   color: #fffefa;
   font-size: 64px;
   line-height: 1.08;
@@ -5366,7 +5354,7 @@ td {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: "Source Serif 4 Variable", Georgia, serif;
+  font-family: var(--font-ui);
   font-size: 62px;
   line-height: 1;
   color: #dec68c;
@@ -5407,7 +5395,7 @@ td {
   box-shadow: none;
 }
 .sign-in-card h2 {
-  font-family: "Source Serif 4 Variable", Georgia, serif;
+  font-family: var(--font-ui);
   font-size: 42px;
   font-weight: 450;
 }
@@ -5432,7 +5420,7 @@ td {
 }
 .customer-card h1,
 .customer-card h2 {
-  font-family: "Source Serif 4 Variable", Georgia, serif;
+  font-family: var(--font-ui);
 }
 .customer-card .button.primary {
   background: #243d32;
@@ -5477,7 +5465,7 @@ td {
   height: 33px;
   border: 1px solid #a7b79f;
   color: #e5ce94;
-  font-family: Georgia, serif;
+  font-family: var(--font-ui);
   font-size: 16px;
   letter-spacing: -2px;
   padding-right: 2px;
@@ -5515,3 +5503,210 @@ td {
     font-size: 21px;
   }
 }
+
+/* Public market pages: phase one of the bullion storefront. */
+.metals-ticker {
+  background: #132538;
+  color: #fff;
+  padding: 0 max(24px, calc((100vw - 1320px) / 2));
+}
+.metals-ticker-cells {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  overflow-x: auto;
+}
+.metal-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 19px 24px;
+  color: #fff;
+  text-decoration: none;
+  border-right: 1px solid #455563;
+  min-height: 132px;
+}
+.metal-cell:first-child {
+  border-left: 1px solid #455563;
+}
+.metal-cell:hover,
+.metal-cell:focus-visible {
+  background: #263b50;
+  outline: 2px solid #dabd79;
+  outline-offset: -2px;
+}
+.metal-cell > span:first-child {
+  font-weight: 600;
+}
+.metal-cell small {
+  font-size: 12px;
+  color: #c7d1dc;
+  font-weight: 400;
+}
+.metal-cell strong {
+  font:
+    500 22px "Geist Mono Variable",
+    monospace;
+  font-variant-numeric: tabular-nums;
+}
+.metal-change {
+  color: #a8e6cd;
+  font-size: 13px;
+}
+.metal-fall {
+  color: #ffb3b3;
+  font-size: 13px;
+}
+.metals-ticker-note {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0;
+  padding: 10px 0;
+  font-size: 11px;
+  color: #d5dce3;
+}
+.public-markets {
+  background: #fff;
+  color: #172b3a;
+  min-height: 100vh;
+  font-family: "Geist Variable", sans-serif;
+}
+.store-utility {
+  padding: 10px max(24px, calc((100vw - 1320px) / 2));
+  background: #f1f3f5;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  font-size: 12px;
+}
+.store-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  max-width: 1320px;
+  margin: auto;
+  padding: 28px 24px;
+}
+.store-brand {
+  color: #172b3a;
+  font-size: 23px;
+  font-weight: 650;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.store-brand span {
+  display: block;
+  color: #77602e;
+  font-size: 12px;
+  letter-spacing: 0.35em;
+  margin-top: 5px;
+}
+.store-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+.store-header nav a {
+  color: #172b3a;
+  text-decoration: none;
+  padding: 12px 0;
+  border-bottom: 2px solid transparent;
+}
+.store-header nav a[aria-current] {
+  border-color: #8b7139;
+}
+.public-market-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px 64px;
+}
+.public-market-main h1 {
+  font:
+    600 40px/1.15 "Geist Variable",
+    sans-serif;
+  margin: 16px 0;
+}
+.market-breadcrumb {
+  font-size: 12px;
+  color: #536171;
+}
+.market-intro {
+  font-size: 17px;
+  margin-bottom: 28px;
+}
+.collection-notice {
+  background: #f2f4f6;
+  padding: 16px;
+  line-height: 1.6;
+  font-size: 13px;
+  border-left: 3px solid #8b7139;
+}
+.public-market-main .market-card {
+  border: 1px solid #d4d9dd;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 24px;
+}
+.store-footer {
+  border-top: 1px solid #d4d9dd;
+  padding: 30px max(24px, calc((100vw - 1320px) / 2));
+  background: #f3f4f5;
+  font-size: 13px;
+  line-height: 1.7;
+}
+@media (max-width: 700px) {
+  .store-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+    padding: 22px 20px;
+  }
+  .store-brand {
+    font-size: 20px;
+  }
+  .store-header nav {
+    gap: 20px;
+    font-size: 14px;
+  }
+  .store-utility {
+    padding: 10px 20px;
+    font-size: 11px;
+  }
+  .metals-ticker {
+    padding: 0 16px;
+  }
+  .metals-ticker-cells {
+    grid-template-columns: repeat(4, 190px);
+  }
+  .metal-cell {
+    padding: 16px;
+  }
+  .public-market-main {
+    padding: 24px 16px 40px;
+  }
+  .public-market-main h1 {
+    font-size: 32px;
+  }
+  .public-market-main .market-card {
+    padding: 16px;
+  }
+  .metals-ticker-note span {
+    display: block;
+  }
+}
+.public-market-main .market-price,
+.public-market-main .market-extremes strong {
+  font-family: "Geist Mono Variable", monospace;
+  font-variant-numeric: tabular-nums;
+}
+.public-market-main .metal-symbol {
+  font-family: "Geist Mono Variable", monospace;
+  font-weight: 600;
+  color: #24364b;
+}
+
+.workspace-switcher { display:flex; flex-wrap:wrap; align-items:center; gap:12px 24px; padding:10px max(20px, calc((100% - 1440px) / 2)); background:#f3f6f7; color:#243d4b; font-size:13px; border-bottom:1px solid #dce3e7; }
+.workspace-switcher span { font-weight:600; margin-right:auto; }
+.workspace-switcher a { color:#243d4b; text-decoration:underline; text-underline-offset:3px; }
