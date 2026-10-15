@@ -4,7 +4,7 @@ A fictional bullion storefront and owner workspace built with **React, TypeScrip
 
 [CI checks](https://github.com/TahaHL/aurum-register/actions) · [Architecture and decisions](docs/STORE_ARCHITECTURE.md) · [Portfolio case study](docs/CASE_STUDY.md)
 
-**Release status:** this store replaces the earlier Aurum Register dealer-only application. The [existing hosted demo](https://aurum-register-demo.onrender.com/) may still show the previous release until its manual deployment completes. Local development is fully functional.
+**[Open the hosted demo](https://aurum-register-demo.onrender.com/)** — the HLM store is deployed on a free Render instance. It may take a minute to wake after inactivity. Use **Switch view** to explore the customer store and owner dashboard.
 
 No real payments, card details or shipping. Stock and orders are fictional. Built with AI assistance; implementation decisions and verification limits are documented.
 
