@@ -1,22 +1,23 @@
 import { weekendDeskClosed, WEEKEND_NOTICE } from "../shared/market-hours.js";
 import { randomUUID } from "node:crypto";
 import { z } from "zod";
-import type { PriceSnapshot, PriceState } from "../shared/types.js";
+import type { PriceSnapshot, PriceState, Metal } from "../shared/types.js";
 export type PriceProvider = () => Promise<PriceSnapshot>;
 export function publicGoldProvider(
   clock = Date.now,
   fetcher: typeof fetch = fetch,
+  metal: Metal = "XAU",
 ): PriceProvider {
   let cached: PriceSnapshot | null = null;
   return async () => {
     if (cached && clock() - Date.parse(cached.fetchedAt) < 30000) return cached;
-    const response = await fetcher("https://api.gold-api.com/price/XAU/GBP", {
+    const response = await fetcher(`https://api.gold-api.com/price/${metal}/GBP`, {
       signal: AbortSignal.timeout(8000),
     });
     if (!response.ok) throw Error("Gold price provider is unavailable");
     const data = z
       .object({
-        symbol: z.literal("XAU"),
+        symbol: z.literal(metal),
         currency: z.literal("GBP"),
         price: z.number().positive().max(100000),
         updatedAt: z.iso.datetime(),
@@ -34,9 +35,9 @@ export function publicGoldProvider(
     return cached;
   };
 }
-export function fixtureProvider(clock = Date.now): PriceProvider {
+export function fixtureProvider(clock = Date.now, metal: Metal = "XAU"): PriceProvider {
   let tick = 0;
-  const values = ["2100.00", "2105.50", "2097.25", "2102.75"];
+  const values = { XAU: ["2100.00", "2105.50", "2097.25", "2102.75"], XAG: ["30", "30.1", "29.9", "30.2"], XPT: ["1000", "1001", "999", "1002"], XPD: ["800", "801", "799", "802"] }[metal];
   return async () => ({
     id: randomUUID(),
     pricePerOunceGBP: values[tick++ % values.length],

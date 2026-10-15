@@ -97,3 +97,12 @@ it("coalesces concurrent refresh requests into one provider call", async () => {
   await Promise.all([feed.refresh(), feed.refresh(), feed.refresh()]);
   expect(calls).toBe(1);
 });
+
+it.each(["XAG", "XPT", "XPD"] as const)("reads %s independently in GBP and rejects crossed metal responses", async metal => {
+  const now = Date.UTC(2026,9,14,12);
+  const fetcher = vi.fn<typeof fetch>().mockImplementation(async () => new Response(JSON.stringify({ symbol: metal, currency: "GBP", price: 42, updatedAt: new Date(now).toISOString() })));
+  const provider = publicGoldProvider(() => now, fetcher, metal);
+  expect((await provider()).pricePerOunceGBP).toBe("42");
+  expect(fetcher.mock.calls[0][0]).toBe(`https://api.gold-api.com/price/${metal}/GBP`);
+  await expect(publicGoldProvider(() => now, fetcher, "XAU")()).rejects.toThrow();
+});

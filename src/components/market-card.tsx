@@ -18,6 +18,7 @@ import {
   unitPrice,
   type PriceUnit,
 } from "../../shared/chart";
+import { METAL_NAMES, type Metal } from "../../shared/types";
 import { api } from "../api";
 
 const money = (value: number) =>
@@ -40,6 +41,7 @@ const ranges: [PriceRange, string][] = [
   ["1h", "Live"],
   ["1d", "1 day"],
   ["7d", "7 days"],
+  ["1m", "1 month"],
   ["3m", "3 months"],
   ["6m", "6 months"],
   ["1y", "1 year"],
@@ -51,6 +53,7 @@ const ranges: [PriceRange, string][] = [
 ];
 
 export default function MarketCard({
+  metal = "XAU",
   snapshot,
   stale,
   connected,
@@ -58,14 +61,15 @@ export default function MarketCard({
   error,
   onRefresh,
 }: {
+  metal?: Metal;
   snapshot: PriceSnapshot | null | undefined;
   stale: boolean;
   connected: boolean;
   refreshing: boolean;
   error: string | null | undefined;
-  onRefresh: () => void;
+  onRefresh?: () => void;
 }) {
-  const [range, setRange] = useState<PriceRange>("1y"),
+  const [range, setRange] = useState<PriceRange>(metal === "XAU" ? "1y" : "1d"),
     [unit, setUnit] = useState<PriceUnit>("oz");
   const [history, setHistory] = useState<PriceHistory | null>(null),
     [historyError, setHistoryError] = useState("");
@@ -90,7 +94,9 @@ export default function MarketCard({
     async function load() {
       try {
         const data = await api<PriceHistory>(
-          "/api/price/history?range=" + range,
+          (metal === "XAU"
+            ? "/api/price/history?range="
+            : `/api/metals/${metal}/history?range=`) + range,
         );
         if (active) {
           setHistory(data);
@@ -111,7 +117,7 @@ export default function MarketCard({
       active = false;
       clearInterval(timer);
     };
-  }, [range]);
+  }, [range, metal]);
   const cutoff = rangeStart(range, Date.now());
   const merged = new Map(
     (history?.source === "frankfurter" ||
@@ -206,7 +212,14 @@ export default function MarketCard({
     );
     const link = document.createElement("a");
     link.href = url;
-    link.download = "aurum-register-gold-" + range + "-" + unit + ".csv";
+    link.download =
+      "hadj-lakehal-metals-" +
+      metal.toLowerCase() +
+      "-" +
+      range +
+      "-" +
+      unit +
+      ".csv";
     link.click();
     URL.revokeObjectURL(url);
   }
@@ -215,15 +228,17 @@ export default function MarketCard({
       <div className="market-heading">
         <div className="metal-heading">
           <span className="metal-symbol">
-            <span aria-hidden="true" className="metal-ingot" />
+            <span aria-hidden="true">
+              {{ XAU: "Au", XAG: "Ag", XPT: "Pt", XPD: "Pd" }[metal]}
+            </span>
           </span>
           <div>
             <p className="eyebrow">
               {history?.source === "frankfurter"
-                ? "XAU / GBP · REFERENCE"
-                : "XAU / GBP · SPOT"}
+                ? `${metal} / GBP · REFERENCE`
+                : `${metal} / GBP · SPOT`}
             </p>
-            <h2 id="gold-chart-heading">Gold price</h2>
+            <h2 id="gold-chart-heading">{METAL_NAMES[metal]} price</h2>
           </div>
         </div>
         <span className={"feed-badge " + (stale ? "stale" : "")}>
@@ -349,7 +364,7 @@ export default function MarketCard({
         ref={container}
         tabIndex={0}
         role="group"
-        aria-label="Gold price chart. Use left and right arrow keys to inspect observations."
+        aria-label={`${METAL_NAMES[metal]} price chart. Use left and right arrow keys to inspect observations.`}
         onMouseLeave={() => setHover(null)}
         onKeyDown={(event) => {
           if (
@@ -383,7 +398,8 @@ export default function MarketCard({
           viewBox={"0 0 " + width + " " + height}
           role="img"
           aria-label={
-            "Gold price in GBP per " +
+            METAL_NAMES[metal] +
+            " price in GBP per " +
             unit +
             ". " +
             points.length +
@@ -642,15 +658,17 @@ export default function MarketCard({
           />
           {connected ? "Connected" : "Reconnecting"}
         </span>
-        <button onClick={onRefresh} disabled={refreshing}>
-          <RefreshCw size={14} className={refreshing ? "spin" : ""} />
-          {refreshing ? "Refreshing…" : "Refresh"}
-        </button>
+        {onRefresh && (
+          <button onClick={onRefresh} disabled={refreshing}>
+            <RefreshCw size={14} className={refreshing ? "spin" : ""} />
+            {refreshing ? "Refreshing…" : "Refresh"}
+          </button>
+        )}
       </div>
       <p className="chart-provenance">
         {history?.source === "frankfurter" ? (
           <>
-            Daily gold reference rates in GBP from{" "}
+            Daily {METAL_NAMES[metal].toLowerCase()} reference rates in GBP from{" "}
             <a href="https://frankfurter.dev" target="_blank" rel="noreferrer">
               Frankfurter
             </a>
@@ -667,7 +685,11 @@ export default function MarketCard({
             {history.metadata?.warning}
           </>
         ) : (snapshot?.source || history?.source) === "fixture" ? (
-          "Simulated prices for demonstration. Only collected observations are shown; earlier history is not available."
+          history?.metadata?.kind === "reference" ? (
+            "SIMULATED daily reference series for demo testing. These are not historical market prices."
+          ) : (
+            "Simulated prices for demonstration. Intraday observations begin when collection starts."
+          )
         ) : (
           <>
             Live source:{" "}
@@ -707,7 +729,7 @@ export default function MarketCard({
             <thead>
               <tr>
                 <th>Time (UK)</th>
-                <th>Gold price</th>
+                <th>{METAL_NAMES[metal]} price</th>
                 <th>Source</th>
               </tr>
             </thead>

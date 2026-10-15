@@ -1,3 +1,10 @@
+import StoreAdmin from "./StoreAdmin";
+import Store from "./Store";
+import {
+  MetalTicker,
+  PublicMarkets,
+  useMarkets,
+} from "./components/metal-markets";
 import BuybackPanel from "./components/buyback-panel";
 import CustomerBuyback from "./components/customer-buyback";
 import QuoteBuilder from "./components/quote-builder";
@@ -61,6 +68,22 @@ export default function App() {
         token={params.get("token") || ""}
       />
     );
+  if (location.pathname === "/admin") return <StoreAdmin />;
+  if (
+    [
+      "/",
+      "/store",
+      "/catalogue",
+      "/basket",
+      "/account",
+      "/checkout",
+      "/sell-to-us",
+      "/guides",
+    ].includes(location.pathname) ||
+    location.pathname.startsWith("/products/")
+  )
+    return <Store />;
+  if (location.pathname.startsWith("/prices")) return <PublicMarkets />;
   return <DealerAccess />;
 }
 function DealerAccess() {
@@ -70,29 +93,53 @@ function DealerAccess() {
   } | null>(null);
   const [error, setError] = useState("");
   const [notice, setNotice] = useState("");
-  async function checkSession() {
+  const retryTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const sessionRequest = useRef(0);
+  const [retrying, setRetrying] = useState(false);
+  async function checkSession(attempt = 0) {
+    const request = ++sessionRequest.current;
+    if (retryTimer.current) clearTimeout(retryTimer.current);
+    setRetrying(false);
     setError("");
     try {
-      setSession(
-        await api<{ user: DealerUser | null; demoAccounts: boolean }>(
-          "/api/auth/session",
-        ),
-      );
+      const value = await api<{
+        user: DealerUser | null;
+        demoAccounts: boolean;
+      }>("/api/auth/session");
+      if (request === sessionRequest.current) setSession(value);
     } catch (e) {
-      setError(
-        e instanceof Error ? e.message : "Unable to connect to your desk.",
-      );
+      if (request !== sessionRequest.current) return;
+      if (e instanceof ApiError && e.status === 429 && attempt === 0) {
+        setError(e.message);
+        setRetrying(true);
+        retryTimer.current = setTimeout(
+          () => void checkSession(1),
+          (e.retryAfterSeconds || 5) * 1000,
+        );
+      } else
+        setError(
+          e instanceof ApiError && e.status === 429
+            ? "Too many requests. Please wait and try again."
+            : e instanceof Error
+              ? e.message
+              : "Unable to connect to your desk.",
+        );
     }
   }
   useEffect(() => {
-    void checkSession();
+    const initial = setTimeout(() => void checkSession(), 0);
+    return () => {
+      clearTimeout(initial);
+      sessionRequest.current++;
+      if (retryTimer.current) clearTimeout(retryTimer.current);
+    };
   }, []);
   if (!session)
     return (
       <main className="access-loading">
         <a className="customer-brand" href="/">
           <GoldMark />
-          Aurum Register
+          Hadj Lakehal Metals
         </a>
         <p role="status">
           {error
@@ -102,7 +149,9 @@ function DealerAccess() {
         {error && (
           <div className="alert" role="alert">
             {error}
-            <button onClick={() => void checkSession()}>Try again</button>
+            {!retrying && (
+              <button onClick={() => void checkSession()}>Try again</button>
+            )}
           </div>
         )}
       </main>
@@ -140,7 +189,6 @@ function Desk({
   onSignedOut: (expired?: boolean) => void;
 }) {
   const [data, setData] = useState<Workspace | null>(null),
-    [price, setPrice] = useState<PriceState | null>(null),
     [tab, setTab] = useState("overview"),
     [error, setError] = useState(""),
     [search, setSearch] = useState("");
@@ -156,8 +204,13 @@ function Desk({
       null,
     ),
     [now, setNow] = useState(Date.now()),
-    [copied, setCopied] = useState(false),
-    [streamConnected, setStreamConnected] = useState(false);
+    [copied, setCopied] = useState(false);
+  const {
+    states,
+    connected: streamConnected,
+    setGold: setPrice,
+  } = useMarkets();
+  const price = states.XAU || null;
   const composer = useRef<HTMLDivElement>(null),
     dialog = useRef<HTMLDialogElement>(null),
     ticketDialog = useRef<HTMLDialogElement>(null);
@@ -181,20 +234,9 @@ function Desk({
   }
   useEffect(() => {
     void load();
-    const stream = new EventSource("/api/price/stream");
-    stream.addEventListener("price", (event) => {
-      try {
-        setPrice(JSON.parse((event as MessageEvent).data));
-        setStreamConnected(true);
-      } catch {
-        setStreamConnected(false);
-      }
-    });
-    stream.onerror = () => setStreamConnected(false);
     const timer = setInterval(() => setNow(Date.now()), 1000);
     const refresh = setInterval(() => void load(), 15000);
     return () => {
-      stream.close();
       clearInterval(timer);
       clearInterval(refresh);
     };
@@ -302,16 +344,16 @@ function Desk({
     : "";
   return (
     <div className="app-shell counter-layout">
-      <a className="skip-link" href="#main">
+      <nav aria-label="Skip navigation"><a className="skip-link" href="#main">
         Skip to content
-      </a>
+      </a></nav>
       <header className="ledger-nav">
         <div className="ledger-nav-inner">
-          <a className="ledger-wordmark" href="/">
+          <a className="ledger-wordmark" href="/desk" aria-label="Hadj Lakehal Metals dealer home">
             <span className="register-mark" aria-hidden="true">
-              AR
+              HLM
             </span>
-            Aurum Register<span className="brand-edition">DESK</span>
+            Hadj Lakehal Metals<span className="brand-edition">DESK</span>
           </a>
           <nav className="ledger-links" aria-label="Main navigation">
             {nav.map(([id, label, Icon]) => (
@@ -354,63 +396,8 @@ function Desk({
           </button>
         </div>
       </header>
-      <div className="market-strip">
-        <div className="market-strip-inner">
-          <span className="strip-label">GOLD / GBP</span>
-          <div
-            className={"nav-ticker num " + (stale ? "is-stale" : "")}
-            aria-label="Current gold price"
-          >
-            <span>Au</span>
-            <strong>
-              {snapshot
-                ? new Intl.NumberFormat("en-GB", {
-                    style: "currency",
-                    currency: "GBP",
-                  }).format(Number(snapshot.pricePerOunceGBP))
-                : "Unavailable"}
-            </strong>
-            <i aria-hidden="true" />
-            <small>{stale ? "Delayed" : "GBP / oz"}</small>
-          </div>
-          <div className="strip-rate">
-            <span>Per gram</span>
-            <strong>
-              {snapshot
-                ? "£" +
-                  new Decimal(snapshot.pricePerOunceGBP)
-                    .div("31.1034768")
-                    .toFixed(2)
-                : "Unavailable"}
-            </strong>
-          </div>
-          <div className="strip-rate">
-            <span>Per kilogram</span>
-            <strong>
-              {snapshot
-                ? "£" +
-                  new Decimal(snapshot.pricePerOunceGBP)
-                    .div("31.1034768")
-                    .times(1000)
-                    .toNumber()
-                    .toLocaleString("en-GB", {
-                      minimumFractionDigits: 2,
-                      maximumFractionDigits: 2,
-                    })
-                : "Unavailable"}
-            </strong>
-          </div>
-          <span className="strip-status">
-            <i className={stale ? "delayed" : ""} />
-            {stale
-              ? "Feed delayed"
-              : snapshot?.source === "fixture"
-                ? "Simulated feed"
-                : "Live price feed"}
-            <span> · GBP</span>
-          </span>
-        </div>
-      </div>
+
+      <MetalTicker />
       <div className="main-shell">
         <main id="main">
           <div className="counter-heading">
@@ -543,7 +530,8 @@ function Desk({
           </div>
           <footer className="desk-footer">
             <span>
-              Aurum Register <b>·</b> Precious-metals inventory & quotations
+              Hadj Lakehal Metals <b>·</b> Precious-metals inventory &
+              quotations
             </span>
             <span>Fictional stock · No payments</span>
           </footer>
@@ -556,7 +544,7 @@ function Desk({
         onClose={() => setTicketOpen(false)}
       >
         <div className="ticket-drawer-top">
-          <span>Aurum Register / Sales</span>
+          <span>Hadj Lakehal Metals / Sales</span>
           <button
             className="icon-button"
             aria-label="Close quotation ticket"

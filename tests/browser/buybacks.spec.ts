@@ -4,7 +4,7 @@ test("buy-back acceptance, inspected receipt and default premium complete the in
   page,
   context,
 }, info) => {
-  await page.goto("/");
+  await page.goto("/desk");
   await page.getByRole("button", { name: /Enter as owner/ }).click();
   await page.getByRole("button", { name: "Buy-backs", exact: true }).click();
   const reference = `Assay ${Date.now()}`;
@@ -66,7 +66,7 @@ test("mobile dealing ticket opens separately, retains drafts and restores keyboa
   page,
 }) => {
   await page.setViewportSize({ width: 390, height: 900 });
-  await page.goto("/");
+  await page.goto("/desk");
   await page.getByRole("button", { name: /Enter as owner/ }).click();
   const newQuote = page.getByRole("button", { name: "New quote", exact: true });
   await expect(page.getByRole("dialog")).not.toBeVisible();

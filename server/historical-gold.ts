@@ -1,5 +1,6 @@
 import { z } from "zod";
 import type {
+  Metal,
   ChartObservation,
   PriceHistory,
   PriceRange,
@@ -12,20 +13,22 @@ const rowsSchema = z
   .array(
     z.object({
       date: z.iso.date(),
-      base: z.literal("XAU"),
+      base: z.enum(["XAU", "XAG", "XPT", "XPD"]),
       quote: z.literal("GBP"),
       rate: z.number().positive().max(100000),
     }),
   )
   .min(1)
   .max(25000);
-export function parseHistoricalGold(
+export function parseHistoricalMetal(
   value: unknown,
   fetchedAt: string,
+  metal: Metal = "XAU",
 ): ChartObservation[] {
   const rows = rowsSchema.parse(value);
   const unique = new Map<string, ChartObservation>();
   for (const row of rows) {
+    if (row.base !== metal) throw Error("Historical metal mismatch");
     if (row.date > fetchedAt.slice(0, 10))
       throw Error("Historical date is in the future");
     unique.set(row.date, {
@@ -42,7 +45,7 @@ export function parseHistoricalGold(
 }
 
 /** Daily institutional reference rates are chart context, never executable quote prices. */
-export class HistoricalGold {
+export class HistoricalMetal {
   private cache: { points: ChartObservation[]; fetchedAt: string } | null =
     null;
   private pending: Promise<void> | null = null;
@@ -52,13 +55,14 @@ export class HistoricalGold {
     private pool: SqlPool,
     private clock = Date.now,
     private fetcher: typeof fetch = fetch,
+    private metal: Metal = "XAU",
   ) {}
 
   private async refresh() {
     if (!this.cache) {
       const saved = await this.pool.query(
-        "SELECT fetched_at,observations FROM historical_price_cache WHERE source=$1",
-        ["frankfurter"],
+        "SELECT fetched_at,observations FROM historical_price_cache WHERE source=$1 AND metal=$2",
+        ["frankfurter", this.metal],
       );
       if (saved.rows.length)
         this.cache = {
@@ -75,16 +79,20 @@ export class HistoricalGold {
     try {
       const fetchedAt = new Date(this.clock()).toISOString();
       const url =
-        "https://api.frankfurter.dev/v2/rates?base=XAU&quotes=GBP&from=1999-01-01&to=" +
+        `https://api.frankfurter.dev/v2/rates?base=${this.metal}&quotes=GBP&from=1999-01-01&to=` +
         fetchedAt.slice(0, 10);
       const response = await this.fetcher(url, {
         signal: AbortSignal.timeout(30000),
       });
       if (!response.ok) throw Error("Historical provider unavailable");
-      const points = parseHistoricalGold(await response.json(), fetchedAt);
+      const points = parseHistoricalMetal(
+        await response.json(),
+        fetchedAt,
+        this.metal,
+      );
       await this.pool.query(
-        "INSERT INTO historical_price_cache(source,fetched_at,observations) VALUES($1,$2,$3) ON CONFLICT(source) DO UPDATE SET fetched_at=excluded.fetched_at,observations=excluded.observations",
-        ["frankfurter", fetchedAt, JSON.stringify(points)],
+        "INSERT INTO historical_price_cache(source,fetched_at,observations,metal) VALUES($1,$2,$3,$4) ON CONFLICT(source,metal) DO UPDATE SET fetched_at=excluded.fetched_at,observations=excluded.observations",
+        ["frankfurter", fetchedAt, JSON.stringify(points), this.metal],
       );
       this.cache = { points, fetchedAt };
       this.warning = undefined;
@@ -93,6 +101,15 @@ export class HistoricalGold {
       this.warning =
         "Historical feed unavailable. Showing the last saved reference series.";
     }
+  }
+  async observations(): Promise<ChartObservation[]> {
+    if (!this.pending)
+      this.pending = this.refresh().finally(() => {
+        this.pending = null;
+      });
+    await this.pending;
+    if (!this.cache) throw new HttpError(503, "Historical prices unavailable");
+    return this.cache.points;
   }
   async read(range: PriceRange): Promise<PriceHistory> {
     if (!this.pending)
@@ -138,3 +155,7 @@ export class HistoricalGold {
     };
   }
 }
+
+// Compatibility for existing gold consumers.
+export const parseHistoricalGold = parseHistoricalMetal;
+export class HistoricalGold extends HistoricalMetal {}

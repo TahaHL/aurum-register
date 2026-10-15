@@ -150,7 +150,7 @@ export class Ledger {
   async workspace(dealerId: string) {
     const [lots, quotes, events, buybacks] = await Promise.all([
       this.pool.query(
-        "SELECT * FROM lots WHERE dealer_id=$1 ORDER BY sku LIMIT 200",
+        "SELECT * FROM lots WHERE dealer_id=$1 AND product_id IS NULL ORDER BY sku LIMIT 200",
         [dealerId],
       ),
       this.pool.query(
@@ -198,6 +198,11 @@ export class Ledger {
         ])
       ).rows[0];
       if (!stock) throw new HttpError(404, "Inventory lot not found.");
+      if (stock.product_id)
+        throw new HttpError(
+          409,
+          "Catalogue packs must use the store checkout for quantity tiers and VAT.",
+        );
       if (input.quantity > stock.total_units - stock.reserved_units)
         throw new HttpError(
           409,
@@ -406,6 +411,7 @@ export class Ledger {
         )
       ).rows[0];
       if (!stock) throw new HttpError(404, "Inventory lot not found.");
+
       const after = stock.total_units + valid.delta;
       if (after < stock.reserved_units)
         throw new HttpError(

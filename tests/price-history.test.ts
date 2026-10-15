@@ -57,3 +57,27 @@ it("records missing-data gaps and removes prices older than the retention window
     ),
   ).toBe(2);
 });
+
+it("keeps simultaneous metal observations isolated and never uses gold history for silver", async () => {
+  const silver = new PriceHistoryStore(
+    database.pool,
+    "public-gold",
+    () => now,
+    "XAG",
+  );
+  const goldPoint = point(30000);
+  await history.append(goldPoint);
+  await silver.append({
+    ...goldPoint,
+    id: randomUUID(),
+    pricePerOunceGBP: "42",
+  });
+  expect((await history.read("1d")).points[0].pricePerOunceGBP).toBe(
+    "3150.1234567890",
+  );
+  const all = await silver.read("1d");
+  expect(all.points).toHaveLength(1);
+  expect(all.points[0].pricePerOunceGBP).toBe("42.0000000000");
+  expect(all.metadata?.kind).toBe("observed");
+  expect(all.metadata?.warning).toContain("Intraday observations");
+});

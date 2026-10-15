@@ -40,7 +40,7 @@ test("retains recorded history on provider failure and does not connect across a
       },
     }),
   );
-  await page.goto("/");
+  await page.goto("/desk");
   await page.getByRole("button", { name: /Enter as owner/ }).click();
   await expect(
     page.getByRole("img", { name: /Gold price in GBP/ }),
@@ -79,7 +79,7 @@ test("chart displays recorded data, converts units, supports keyboard inspection
       },
     }),
   );
-  await page.goto("/");
+  await page.goto("/desk");
   await page.getByRole("button", { name: /Enter as owner/ }).click();
   const chart = page.getByRole("region", { name: "Gold price", exact: true });
   await expect(chart.getByRole("img")).toHaveAttribute(
@@ -106,7 +106,7 @@ test("chart displays recorded data, converts units, supports keyboard inspection
     page.getByRole("button", { name: "7 days", exact: true }),
   ).toHaveAttribute("aria-pressed", "true");
   await expect(page.locator(".chart-provenance")).toContainText(
-    "earlier history is not available",
+    "Intraday observations begin when collection starts",
   );
   await page.getByLabel("Chart weight unit").selectOption("kg");
   await expect(chart.getByRole("img")).toHaveAttribute(

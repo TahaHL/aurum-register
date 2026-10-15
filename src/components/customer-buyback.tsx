@@ -73,7 +73,7 @@ export default function CustomerBuyback({
     <div className="customer-shell">
       <a href="/" className="customer-brand">
         <GoldMark />
-        Aurum Register
+        Hadj Lakehal Metals
       </a>
       <p className="demo-line">Fictional buy-back offer · no payment is made</p>
       <main className="customer-card">

@@ -9,3 +9,5 @@ if (result.status !== 0) process.exit(result.status || 1);
 await cp("server/migrations", "dist-server/server/migrations", {
   recursive: true,
 });
+
+await cp("server/seed", "dist-server/server/seed", { recursive: true });

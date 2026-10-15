@@ -3,7 +3,7 @@ import AxeBuilder from "@axe-core/playwright";
 for (const width of [1440, 1024, 390])
   test(`design spec layout at ${width}px`, async ({ page }, info) => {
     await page.setViewportSize({ width, height: 1050 });
-    await page.goto("/");
+    await page.goto("/desk");
     await page.getByRole("button", { name: /Enter as owner/ }).click();
     for (const name of ["Prices", "Inventory", "Quotes", "Activity"]) {
       await page.getByRole("button", { name, exact: true }).click();
@@ -64,7 +64,7 @@ test("all requested historical ranges remain separate from the live quoting pric
       },
     }),
   );
-  await page.goto("/");
+  await page.goto("/desk");
   await page.getByRole("button", { name: /Enter as owner/ }).click();
   for (const [name, range] of [
     ["All time", "all"],
@@ -89,5 +89,7 @@ test("all requested historical ranges remain separate from the live quoting pric
     await expect(page.locator(".market-price")).toContainText("£3,000.00");
   }
   await expect(page.locator(".chart-provenance")).toContainText("06 Jan 1999");
-  await expect(page.locator(".nav-ticker")).not.toContainText("£3,000.00");
+  await expect(
+    page.getByLabel("Current gold price", { exact: true }),
+  ).not.toContainText("£3,000.00");
 });

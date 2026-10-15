@@ -1,7 +1,12 @@
 import { beforeAll, beforeEach, afterAll, expect, it, vi } from "vitest";
 import { previewDatabase } from "../server/preview-database";
 import { migrate } from "../server/migrate";
-import { HistoricalGold, parseHistoricalGold } from "../server/historical-gold";
+import {
+  HistoricalGold,
+  HistoricalMetal,
+  parseHistoricalGold,
+  parseHistoricalMetal,
+} from "../server/historical-gold";
 import { rangeStart } from "../shared/chart";
 let db: Awaited<ReturnType<typeof previewDatabase>>;
 const initial = Date.UTC(2026, 9, 14, 12);
@@ -85,4 +90,31 @@ it.each([
   expect(() =>
     parseHistoricalGold(data, new Date(initial).toISOString()),
   ).toThrow();
+});
+
+it("isolates four metal caches and a failed palladium fetch", async () => {
+  const fetcher = vi.fn<typeof fetch>().mockImplementation(async (input) => {
+    const metal = new URL(String(input)).searchParams.get("base");
+    if (metal === "XPD") throw Error("offline");
+    return new Response(
+      JSON.stringify([
+        {
+          date: "2026-10-13",
+          base: metal,
+          quote: "GBP",
+          rate: metal === "XAG" ? 30 : 1100,
+        },
+      ]),
+    );
+  });
+  const silver = new HistoricalMetal(db.pool, () => initial, fetcher, "XAG"),
+    platinum = new HistoricalMetal(db.pool, () => initial, fetcher, "XPT"),
+    palladium = new HistoricalMetal(db.pool, () => initial, fetcher, "XPD");
+  expect((await silver.read("1y")).points[0].pricePerOunceGBP).toBe("30");
+  expect((await platinum.read("1y")).points[0].pricePerOunceGBP).toBe("1100");
+  await expect(palladium.read("1y")).rejects.toMatchObject({ status: 503 });
+  expect((await silver.read("1y")).points[0].pricePerOunceGBP).toBe("30");
+  expect(() =>
+    parseHistoricalMetal(rates, new Date(initial).toISOString(), "XAG"),
+  ).toThrow("mismatch");
 });
